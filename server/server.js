@@ -3,12 +3,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import Promise from 'bluebird';
 import config from './config';
+import http from 'http';
+import socket from 'socket.io';
 
 // Setup Server
 var app = express();
-var http = require("http");
-var server = http.createServer(app);
-var io = require('socket.io').listen(server); //Mother fkng socket.io
+var server = http.createServer(app); 
+var io = socket.listen(server); //Mother fkng socket.io
 
 require('./config/express').default(app); // Express configs
 require('./routes').default(app); // Express Routes
