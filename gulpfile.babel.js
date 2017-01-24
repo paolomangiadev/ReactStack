@@ -5,7 +5,10 @@ import runSequence from 'run-sequence';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import lazypipe from 'lazypipe';
 import nodemon from 'nodemon';
+import browserify from 'gulp-browserify';
+import browserSync from 'browser-sync';
 
+browserSync.create()
 var plugins = gulpLoadPlugins(); // carica plugin di gulp
 var serverPath = 'server' // define cartella server
 

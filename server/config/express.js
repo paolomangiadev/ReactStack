@@ -1,7 +1,7 @@
 import bodyParser from 'body-parser';
 import path from 'path';
 
-const clientPath = '../../public';
+const clientPath = '../../client/public';
 
 export default function(app) {
   // configure app to use bodyParser()
