@@ -9,15 +9,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-loader": "^6.4.1",
+    "babel-preset-react": "^6.23.0",
     "bluebird": "^3.4.7",
     "body-parser": "^1.16.0",
     "del": "^2.2.2",
     "express": "^4.14.0",
     "mongodb": "^2.2.21",
     "mongoose": "^4.7.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "socket-io": "^1.0.0",
     "socket.io": "^1.7.2",
-    "socket.io-client": "^1.7.2"
+    "socket.io-client": "^1.7.2",
+    "webpack": "^2.3.2",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-stream": "^3.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
