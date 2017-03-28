@@ -8,9 +8,10 @@ import lazypipe from 'lazypipe';
 import nodemon from 'nodemon';
 import browserify from 'gulp-browserify';
 import browserSync from 'browser-sync';
-import webpack from 'webpack';
-import webpackMiddleware from 'webpack-dev-middleware';
-import webpackConfig from './webpack.config.js';
+import webpack from 'webpack-stream';
+import webpackconfig from './webpack.config.js';
+
+console.log(webpackconfig);
 
 browserSync.create()
 var plugins = gulpLoadPlugins(); // carica plugin di gulp
@@ -26,6 +27,9 @@ const paths = {
     client: {
         scripts: [
           `${clientPath}/**/!(*.spec|*.integration).js` // include di tutti gli script client [no integration tests]
+        ],
+        views: [
+          `${clientPath}/index.html` // include di tutti gli script client [no integration tests]
         ]
     },
     dist: 'dist'
@@ -33,7 +37,12 @@ const paths = {
 
 let transpileServer = lazypipe()
     .pipe(plugins.sourcemaps.init)
-    .pipe(plugins.babel)
+    .pipe(plugins.babel, {
+        plugins: [
+            'transform-class-properties',
+            'transform-runtime'
+        ]
+    })
     .pipe(plugins.sourcemaps.write, '.');
 
 let transpileClient = lazypipe()
@@ -52,20 +61,26 @@ gulp.task('transpile:server', ['clean:dist'], () => {
         .pipe(gulp.dest(`${paths.dist}/${serverPath}`)); // cartella di destinazione build (dist/server)
 });
 
-gulp.task('transpile:client',['transpile:server'], () => {
-    return gulp.src(_.union(paths.client.scripts)) // cartella di partenza dei file non compilati
-        .pipe(transpileClient()) // transpile dei file babel
-        .pipe(gulp.dest(`${paths.dist}/${clientPath}`)); // cartella di destinazione build (dist/server)
+gulp.task('transpile:client', ['transpile:server'], function() {
+    return gulp.src(_.union(paths.client.scripts))
+        .pipe(transpileClient())
+        .pipe(webpack(webpackconfig))
+        .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
+});
+
+gulp.task('build:client', ['transpile:client'], function() {
+    return gulp.src(_.union(paths.client.views))
+        .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
 });
 
 
-gulp.task('start:server', ['transpile:client'], () => {
+gulp.task('start:server', ['build:client'], () => {
     process.env.NODE_ENV = process.env.NODE_ENV || 'development'; // set dev
     nodemon(`-w ${serverPath} ${serverPath}`); // lancia change listener nodemon
 });
 
 gulp.task('serve', cb => {
-    runSequence(['clean:dist', 'transpile:server', 'start:server'], // ordine di lancio tasks gulp
+    runSequence(['clean:dist', 'transpile:server', 'transpile:client', 'build:client', 'start:server'], // ordine di lancio tasks gulp
         //'watch',
         cb);
 });
