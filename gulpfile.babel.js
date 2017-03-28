@@ -9,9 +9,7 @@ import nodemon from 'nodemon';
 import browserify from 'gulp-browserify';
 import browserSync from 'browser-sync';
 import webpack from 'webpack-stream';
-import webpackconfig from './webpack.config.js';
-
-console.log(webpackconfig);
+// import webpackconfig from './webpack.config.js';
 
 browserSync.create()
 var plugins = gulpLoadPlugins(); // carica plugin di gulp
@@ -61,14 +59,14 @@ gulp.task('transpile:server', ['clean:dist'], () => {
         .pipe(gulp.dest(`${paths.dist}/${serverPath}`)); // cartella di destinazione build (dist/server)
 });
 
-gulp.task('transpile:client', ['transpile:server'], function() {
-    return gulp.src(_.union(paths.client.scripts))
-        .pipe(transpileClient())
-        .pipe(webpack(webpackconfig))
-        .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
-});
+// gulp.task('transpile:client', ['transpile:server'], function() {
+//     return gulp.src(_.union(paths.client.scripts))
+//         .pipe(transpileClient())
+//         // .pipe(webpack(webpackconfig))
+//         .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
+// });
 
-gulp.task('build:client', ['transpile:client'], function() {
+gulp.task('build:client', ['transpile:server'], function() {
     return gulp.src(_.union(paths.client.views))
         .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
 });
@@ -80,7 +78,7 @@ gulp.task('start:server', ['build:client'], () => {
 });
 
 gulp.task('serve', cb => {
-    runSequence(['clean:dist', 'transpile:server', 'transpile:client', 'build:client', 'start:server'], // ordine di lancio tasks gulp
+    runSequence(['clean:dist', 'transpile:server', 'start:server', 'build:client'], // ordine di lancio tasks gulp
         //'watch',
         cb);
 });
