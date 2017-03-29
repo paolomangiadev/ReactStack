@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import { resolve } from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 // import nodeExternals from 'webpack-node-externals';
 
 const clientPath = './client/public/';
@@ -33,19 +34,23 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          use: [
-            'style-loader',
-            'css-loader?modules',
-            'postcss-loader',
-          ]
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: 'css-loader'
+          }),
+        },
+        {
+           test: require.resolve('wowjs/dist/wow.js'),
+           loader: 'exports-loader?this.WOW'
         }
       ]
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       // enable HMR globally
+      new ExtractTextPlugin("styles.css"),
       new webpack.optimize.OccurrenceOrderPlugin(),
-      new webpack.NoErrorsPlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
       new webpack.NamedModulesPlugin()
       // prints more readable module names in the browser console on HMR updates
     ]
