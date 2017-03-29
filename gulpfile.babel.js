@@ -59,14 +59,14 @@ gulp.task('transpile:server', ['clean:dist'], () => {
         .pipe(gulp.dest(`${paths.dist}/${serverPath}`)); // cartella di destinazione build (dist/server)
 });
 
-// gulp.task('transpile:client', ['transpile:server'], function() {
-//     return gulp.src(_.union(paths.client.scripts))
-//         .pipe(transpileClient())
-//         // .pipe(webpack(webpackconfig))
-//         .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
-// });
+gulp.task('transpile:client', ['transpile:server'], function() {
+    return gulp.src(_.union(paths.client.scripts))
+        .pipe(transpileClient())
+        // .pipe(webpack(webpackconfig))
+        .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
+});
 
-gulp.task('build:client', ['transpile:server'], function() {
+gulp.task('build:client', ['transpile:client'], function() {
     return gulp.src(_.union(paths.client.views))
         .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
 });
@@ -78,7 +78,7 @@ gulp.task('start:server', ['build:client'], () => {
 });
 
 gulp.task('serve', cb => {
-    runSequence(['clean:dist', 'transpile:server', 'start:server', 'build:client'], // ordine di lancio tasks gulp
+    runSequence(['clean:dist', 'transpile:server', 'start:server', 'transpile:client', 'build:client'], // ordine di lancio tasks gulp
         //'watch',
         cb);
 });

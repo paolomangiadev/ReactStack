@@ -3,9 +3,9 @@ import webpack from 'webpack';
 import { resolve } from 'path';
 // import nodeExternals from 'webpack-node-externals';
 
-const clientPath = '../../client/public/';
+const clientPath = './client/public/';
 
-console.log(resolve(__dirname, '../../node_modules'));
+console.log(resolve(__dirname, './node_modules'));
 
 module.exports = {
 
@@ -44,8 +44,9 @@ module.exports = {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       // enable HMR globally
-
-      new webpack.NamedModulesPlugin(),
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new webpack.NoErrorsPlugin(),
+      new webpack.NamedModulesPlugin()
       // prints more readable module names in the browser console on HMR updates
     ]
 
