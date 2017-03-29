@@ -1,22 +1,22 @@
-import axios from 'axios';
-import WOW from 'wowjs';
 import React, { Component } from 'react';
-
-console.log('axios: ' + WOW);
-
-if (typeof window !== 'undefined') { let WOW = require('wowjs'); }
+import axios from 'axios';
+import css from './Layout.css';
+import Utils from '../utils/Utils';
+import Header from './Header'
 
 export default class Layout extends Component {
   componentDidMount() {
-    if (typeof window !== 'undefined') { const wow = new WOW(); wow.init(); }
+    const wow = Utils.registerWOW();
+    wow.init();
   }
   render(){
     return (
       <div>
-      <h1>Hello from React!</h1>
-      <div className="g">
-                Content to Reveal Here
-      </div>
+        <Header />
+        <h1 className="pippo">Hello from React!</h1>
+        <div className="wow fadeInUp" data-wow-duration="0.5s">
+          Content to Reveal Here
+        </div>
       </div>
     );
   }

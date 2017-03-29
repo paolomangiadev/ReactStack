@@ -34,14 +34,8 @@ module.exports = {
           include: resolve(__dirname, clientPath)
         },
         {
-          test: /\.(less|css)$/,
-          use: ['style-loader', 'css-loader'],
-          include: resolve(__dirname, clientPath)
-        },
-        {
-          test: /\.scss$/,
-          use: ['style-loader', 'css-loader'],
-          include: resolve(__dirname, clientPath)
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader?sourceMap']
         },
         {
            test: require.resolve('wowjs/dist/wow.js'),
