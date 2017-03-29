@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import bulma from 'bulma/css/bulma.css';
 import axios from 'axios';
 import css from './Layout.css';
 import Utils from '../utils/Utils';
-import Header from './Header'
+import Header from './Header';
 
-export default class Layout extends Component {
+class Layout extends Component {
   componentDidMount() {
     const wow = Utils.registerWOW();
     wow.init();
@@ -13,14 +14,12 @@ export default class Layout extends Component {
     return (
       <div>
         <Header />
-        <h1 className="pippo">Hello from React!</h1>
-        <div className="wow fadeInUp" data-wow-duration="0.5s">
-          Content to Reveal Here
-        </div>
       </div>
     );
   }
 }
+
+export default Layout;
 
 
 

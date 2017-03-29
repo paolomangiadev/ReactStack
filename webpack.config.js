@@ -35,7 +35,7 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader?sourceMap']
+          use: ['style-loader', 'css-loader?sourceMap', 'sass-loader']
         },
         {
            test: require.resolve('wowjs/dist/wow.js'),
