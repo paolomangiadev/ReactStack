@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import { resolve } from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 // import nodeExternals from 'webpack-node-externals';
 
 const clientPath = './client/public/';
@@ -18,7 +19,7 @@ module.exports = {
       path.resolve(__dirname, clientPath + 'index.js'),
     ],
     output: {
-      path: resolve(__dirname, clientPath),
+      path: '/',
       publicPath: '/',
       filename: 'bundle.js'
     },
@@ -28,31 +29,35 @@ module.exports = {
       rules: [
         {
           test: /\.(js|jsx)$/,
-          loader: 'babel-loader',
+          use: 'babel-loader',
           exclude: /node_modules/,
           include: resolve(__dirname, clientPath)
         },
         {
-          test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: 'css-loader'
-          }),
+          test: /\.(less|css)$/,
+          use: ['style-loader', 'css-loader'],
+          include: resolve(__dirname, clientPath)
+        },
+        {
+          test: /\.scss$/,
+          use: ['style-loader', 'css-loader'],
+          include: resolve(__dirname, clientPath)
         },
         {
            test: require.resolve('wowjs/dist/wow.js'),
-           loader: 'exports-loader?this.WOW'
+           use: 'exports-loader?this.WOW'
         }
       ]
     },
+    resolve: {
+      extensions: [".js", ".json", ".css"]
+    },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
-      // enable HMR globally
-      new ExtractTextPlugin("styles.css"),
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
-      new webpack.NamedModulesPlugin()
-      // prints more readable module names in the browser console on HMR updates
+      new webpack.NamedModulesPlugin(),
+
     ]
 
 }

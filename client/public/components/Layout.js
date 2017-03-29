@@ -1,20 +1,20 @@
 import axios from 'axios';
-import animate from 'animate.css/animate.min.css';
 import WOW from 'wowjs';
 import React, { Component } from 'react';
 
 console.log('axios: ' + WOW);
 
+if (typeof window !== 'undefined') { let WOW = require('wowjs'); }
+
 export default class Layout extends Component {
   componentDidMount() {
-    const wow = new WOW();
-    wow.init();
+    if (typeof window !== 'undefined') { const wow = new WOW(); wow.init(); }
   }
   render(){
     return (
       <div>
       <h1>Hello from React!</h1>
-      <div className="wow bounceInRight">
+      <div className="g">
                 Content to Reveal Here
       </div>
       </div>
