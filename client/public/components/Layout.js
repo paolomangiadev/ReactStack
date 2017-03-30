@@ -5,6 +5,7 @@ import css from './Layout.css';
 import Utils from '../utils/Utils';
 import Header from './Header';
 import Aboutus from './Aboutus';
+import '../fonts/lato/lato.scss';
 
 class Layout extends Component {
   componentDidMount() {
@@ -22,19 +23,3 @@ class Layout extends Component {
 }
 
 export default Layout;
-
-
-
-// axios.get('http://localhost:3000/api/chats')
-//   .then(function (response) {
-//     console.log('response: ' + JSON.stringify(response));
-//   })
-//   .catch(function (error) {
-//     console.log('err: ' + error);
-//   });
-//
-// export default () => {
-//   return (
-//     <h1>Hello from React!</h1>
-//   );
-// }

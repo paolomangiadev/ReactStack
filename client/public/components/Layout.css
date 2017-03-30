@@ -1,9 +1,9 @@
-.pippo {
-  color: red;
-}
-.g {
-  color: #2a2a6a;
-}
 .wow {
   visibility: hidden;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Lato', sans-serif;
+}
+p {
+  font-family: 'Lato', sans-serif;
 }

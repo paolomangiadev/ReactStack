@@ -8,5 +8,55 @@
 .trasparent {
   background-color: rgba(0, 0, 0, 0.40);
 }
+.brand {
+  height: auto;
+  display: block;
+}
+.brand img {
+  width: 50%;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+.we-are {
+  display: block;
+  height: 25px;
+  width: 20%;
+  float: none;
+  margin: 0 auto;
+  position: relative;
+  line-height: 25px;
+}
+.we-are .line {
+  position: absolute;
+  width: 55px;
+  height: 100%;
+  line-height: 25px;
+}
+.we-are .line img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY('-50%');
+  -moz-transform: translateY('-50%');
+  transform: translateY('-50%');
+}
+.we-are .line_pre {
+  left: 0;
+  top: 0;
+}
+.we-are .line_post {
+  right: 0;
+  top: 0;
+}
+.we-are span{
+  color: #fff;
+  font-size: 22px;
+}
 /*= End of HERO =*/
 /*=============================================<<<<<*/

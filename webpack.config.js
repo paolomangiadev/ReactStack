@@ -34,16 +34,20 @@ module.exports = {
           include: resolve(__dirname, clientPath)
         },
         {
-          test: /\.css$/,
+          test: /\.(css|scss)$/,
           use: ['style-loader', 'css-loader?sourceMap', 'sass-loader']
         },
         {
-           test: require.resolve('wowjs/dist/wow.js'),
-           use: 'exports-loader?this.WOW'
+          test: require.resolve('wowjs/dist/wow.js'),
+          use: 'exports-loader?this.WOW'
         },
         {
           test: /\.(jpe?g|png|gif|svg)$/i,
-          loader: "file-loader?name=[name].[ext]&publicPath=/&outputPath=/"
+          loader: "file-loader?name=images/[name].[ext]&publicPath=/&outputPath=/"
+        },
+        {
+          test: /\.(eot|svg|ttf|woff|woff2)$/,
+          loader: 'file-loader?name=fonts/[name].[ext]'
         }
       ]
     },
