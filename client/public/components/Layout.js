@@ -4,6 +4,7 @@ import axios from 'axios';
 import css from './Layout.css';
 import Utils from '../utils/Utils';
 import Header from './Header';
+import Aboutus from './Aboutus';
 
 class Layout extends Component {
   componentDidMount() {
@@ -14,6 +15,7 @@ class Layout extends Component {
     return (
       <div>
         <Header />
+        <Aboutus />
       </div>
     );
   }

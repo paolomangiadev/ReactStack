@@ -1,0 +1,12 @@
+/*=============================================>>>>>
+= HERO =
+===============================================>>>>>*/
+.is-background {
+  background: url('../../src/images/bg.jpeg') no-repeat;
+  background-size: 100%;
+}
+.trasparent {
+  background-color: rgba(0, 0, 0, 0.40);
+}
+/*= End of HERO =*/
+/*=============================================<<<<<*/

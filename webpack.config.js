@@ -40,6 +40,10 @@ module.exports = {
         {
            test: require.resolve('wowjs/dist/wow.js'),
            use: 'exports-loader?this.WOW'
+        },
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          loader: "file-loader?name=[name].[ext]&publicPath=/&outputPath=/"
         }
       ]
     },

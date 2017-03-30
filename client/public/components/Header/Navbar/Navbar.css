@@ -1,0 +1,19 @@
+/*=============================================>>>>>
+= NAVBAR HERO =
+===============================================>>>>>*/
+.custom-header {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+}
+.custom-header .nav {
+  border: none;
+  box-shadow: none;
+}
+.custom-header .nav a.nav-item {
+  color: #fff;
+}
+.custom-header .nav a.nav-item.is-active {
+  color: #8394AC;
+}
+/*= End of NAVBAR HERO =*/
+/*=============================================<<<<<*/
