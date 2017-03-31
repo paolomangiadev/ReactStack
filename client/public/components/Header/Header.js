@@ -12,18 +12,31 @@ class Header extends Component {
     super(props);
     this.state = {
       socials: [
-        {src: '../../src/images/facebook.png'},
-        {src: '../../src/images/instagram.png'},
-        {src: '../../src/images/twitter.png'},
-        {src: '../../src/images/linkedin.png'}
+        {
+          href: 'https://www.facebook.com/Netglitch-639632836220315/',
+          src: '../../src/images/facebook.png'
+        },
+        {
+          href: 'https://www.instagram.com/netglitch/',
+          src: '../../src/images/instagram.png'
+        },
+        {
+          href: '#', src: '../../src/images/twitter.png'
+        },
+        {
+          href: '#',
+          src: '../../src/images/linkedin.png'
+        }
       ]
     }
   }
   render(){
     if (this.state.socials) {
-      socialList = this.state.socials.map(function(item) {
+      socialList = _.map(this.state.socials, function(item) {
         return (
-          <div key={item.src} className="column"><img src={item.src}/></div>
+          <a href={item.href} key={item.src}>
+          <div className="column socials"><img src={item.src}/></div>
+          </a>
         );
       });
     }
@@ -40,19 +53,19 @@ class Header extends Component {
           <div className="container has-text-centered">
 
             {/* TITLE SECTION */}
-            <div data-wow-duration="0.6s" className="wow fadeInDown we-are">
+            <div data-wow-duration="0.7s" className="wow fadeInDown we-are">
               <div className="line line_pre"><img src={line}/></div>
                 <span>We are</span>
               <div className="line line_post"><img src={line}/></div>
             </div>
-            <span data-wow-duration="0.6s" className="wow fadeIn title brand">
+            <span data-wow-duration="0.7s" className="wow fadeIn title brand">
               <img src={brand}/>
             </span>
             {/* END OF TITLE SECTION */}
 
             {/* GET A QUOTE */}
             <div className="subtitle">
-              <div data-wow-duration="0.6s" className="wow fadeInUp get-quote">
+              <div data-wow-duration="0.7s" className="wow fadeInUp get-quote">
                 <div className="get-quote_wrapper left_wrapper">
                   <a className="item item_left">Services</a>
                   <div className="item item_line item_line_left"></div>
@@ -67,7 +80,7 @@ class Header extends Component {
             {/* END OF GET A QUOTE */}
 
             {/* SOCIALS */}
-                <div className="columns">
+                <div data-wow-duration="3s" className="wow fadeIn columns social_wrapper">
                   {socialList}
                 </div>
             {/* END OF SOCIALS */}

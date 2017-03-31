@@ -112,5 +112,18 @@
   margin: 0 32px 0 26px;
 }
 
+/* SOCIALS */
+.social_wrapper {
+  width: 28%;
+  margin: 35px auto auto auto;
+}
+.social_wrapper .socials {
+  opacity: 0.75;
+  transition: 0.5s;
+}
+.social_wrapper .socials:hover {
+  opacity: 1;
+}
+
 /*= End of HERO =*/
 /*=============================================<<<<<*/
