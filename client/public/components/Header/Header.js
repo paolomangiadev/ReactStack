@@ -3,7 +3,6 @@ import css from './Header.css';
 import Navbar from './Navbar';
 const brand = '../../src/images/netglitch.svg';
 const line = '../../src/images/line.png';
-const line_vertical = '../../src/images/line_vertical.png';
 
 class Header extends Component {
   componentDidMount() {
@@ -28,7 +27,7 @@ class Header extends Component {
               <div data-wow-duration="0.6s" className="wow fadeInUp get-quote">
 
                 <div className="get-quote_wrapper left_wrapper">
-                  <p className="item item_left">Services</p>
+                  <a className="item item_left">Services</a>
 
                   <div className="item item_line item_line_left"></div>
 
@@ -38,7 +37,7 @@ class Header extends Component {
 
                   <div className="item item_line item_line_right"></div>
 
-                  <p className="item item_right">Jobs</p>
+                  <a className="item item_right">Jobs</a>
                 </div>
 
               </div>
