@@ -1,6 +1,9 @@
 /*=============================================>>>>>
 = HERO =
 ===============================================>>>>>*/
+
+/* BACKGROUND */
+
 .is-background {
   background: url('../../src/images/bg.jpeg') no-repeat;
   background-size: 100%;
@@ -8,6 +11,9 @@
 .trasparent {
   background-color: rgba(0, 0, 0, 0.40);
 }
+
+/* NETGLITCH BRAND */
+
 .brand {
   height: auto;
   display: block;
@@ -22,6 +28,9 @@
   -ms-user-select: none;
   pointer-events: none;
 }
+
+/* WE ARE HEADER */
+
 .we-are {
   display: block;
   height: 25px;
@@ -58,5 +67,41 @@
   color: #fff;
   font-size: 22px;
 }
+
+/* GET QUOTE */
+
+.get-quote {
+  display: inline-block;
+  margin: 0 auto;
+  height: 40px;
+  position: relative;
+  color: #fff;
+  line-height: 40px;
+}
+.get-quote .item {
+  display: inline-block;
+  float: none;
+  min-width: 150px;
+  vertical-align: middle;
+}
+.get-quote_wrapper .item_line {
+  height: 25px;
+  min-width: 1px;
+  width: 1px;
+  background: #fff;
+}
+.item.item_left {
+  text-align: right;
+}
+.item.item_right {
+  text-align: left;
+}
+.item_line_left {
+  margin: 0 26px 0 32px;
+}
+.item_line_right {
+  margin: 0 32px 0 26px;
+}
+
 /*= End of HERO =*/
 /*=============================================<<<<<*/
