@@ -125,5 +125,48 @@
   opacity: 1;
 }
 
+
+/* ARROW DOWN */
+.arrow_down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 5px;
+  text-align: center;
+}
+.arrow_down i {
+  color: #fff;
+  font-size: 25px;
+  opacity: 0.75;
+  animation: bounce 2s infinite;
+-webkit-animation: bounce 2s infinite;
+-moz-animation: bounce 2s infinite;
+-o-animation: bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+ 40% {-webkit-transform: translateY(-10px);}
+ 60% {-webkit-transform: translateY(-5px);}
+}
+
+@-moz-keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+ 40% {-webkit-transform: translateY(-10px);}
+ 60% {-webkit-transform: translateY(-5px);}
+}
+
+@-o-keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+ 40% {-webkit-transform: translateY(-10px);}
+ 60% {-webkit-transform: translateY(-5px);}
+}
+@keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+ 40% {-webkit-transform: translateY(-10px);}
+ 60% {-webkit-transform: translateY(-5px);}
+}
+
 /*= End of HERO =*/
 /*=============================================<<<<<*/

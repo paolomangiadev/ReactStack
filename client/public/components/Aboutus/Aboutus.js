@@ -6,7 +6,7 @@ class Aboutus extends Component {
   }
   render(){
     return (
-    <div className="is-fullwidth is-background">
+    <div id="second" className="is-fullwidth is-background">
       <section className="hero is-danger is-fullheight">
         <div className="hero-body">
           <div className="container">

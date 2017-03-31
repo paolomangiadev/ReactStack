@@ -21,7 +21,7 @@ class Header extends Component {
           src: '../../src/images/instagram.png'
         },
         {
-          href: '#', src: '../../src/images/twitter.png'
+          href: '#second', src: '../../src/images/twitter.png'
         },
         {
           href: '#',
@@ -35,7 +35,7 @@ class Header extends Component {
       socialList = _.map(this.state.socials, function(item) {
         return (
           <a href={item.href} key={item.src}>
-          <div className="column socials"><img src={item.src}/></div>
+            <div className="column socials"><img src={item.src}/></div>
           </a>
         );
       });
@@ -80,16 +80,17 @@ class Header extends Component {
             {/* END OF GET A QUOTE */}
 
             {/* SOCIALS */}
-                <div data-wow-duration="3s" className="wow fadeIn columns social_wrapper">
-                  {socialList}
-                </div>
+              <div data-wow-duration="3s" className="wow fadeIn columns social_wrapper">
+                {socialList}
+              </div>
             {/* END OF SOCIALS */}
-
-
           </div>
           {/* END OF HERO CONTAINER */}
         </div>
         {/* END OF HERO */}
+        <div className="arrow_down">
+          <i className="fa fa-angle-down" aria-hidden="true"></i>
+        </div>
 
       </section>
     </div>

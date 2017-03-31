@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import bulma from 'bulma/css/bulma.css';
+import FontAwesome from 'font-awesome/css/font-awesome.min.css';
 import axios from 'axios';
 import css from './Layout.css';
 import Utils from '../utils/Utils';
