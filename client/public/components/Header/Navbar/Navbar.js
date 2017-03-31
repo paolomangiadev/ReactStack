@@ -12,17 +12,12 @@ class Navbar extends Component {
     }
   }
 
-  initialState(){
-    return this.state.menuOpen;
-  }
-
   toggleMenu(){
-    console.log(this.state.menuOpen);
     if (this.state.menuOpen === true) {
-      return false;
+      this.setState({menuOpen: false});
     }
     else {
-      return true;
+      this.setState({menuOpen: true});
     }
   }
 
@@ -34,10 +29,16 @@ class Navbar extends Component {
         <div className="container">
           <div className="toggle-menu">
             <a className="anchor_wrapper" onClick={this.toggleMenu.bind(this)}>
-            <div className="toggle-menu_wrapper">
-              <span className={classNames('toggle-menu_line', 'toggle-menu_line-first', {openMenu: this.props.menuOpen})}></span>
-              <span className={classNames('toggle-menu_line', 'toggle-menu_line-second', {openMenu: this.props.menuOpen})}></span>
-              <span className={classNames('toggle-menu_line', 'toggle-menu_line-third', {openMenu: this.props.menuOpen})}></span>
+            <div className={classNames('toggle-menu_wrapper', {openMenu: this.state.menuOpen})}>
+              <span className="toggle-menu_line toggle-menu_line-first"></span>
+              <span className="toggle-menu_line toggle-menu_line-second"></span>
+              <span className="toggle-menu_line toggle-menu_line-third"></span>
+
+              <div className="toggle-menu_cross-wrapper">
+              <span className="toggle-menu_line toggle-menu_cross-first"></span>
+              <span className="toggle-menu_line toggle-menu_cross-second"></span>
+              </div>
+
             </div>
             </a>
           </div>
