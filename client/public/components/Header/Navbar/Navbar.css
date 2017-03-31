@@ -20,5 +20,65 @@
 .custom-header .nav a.nav-item.is-active {
   color: #8394AC;
 }
+
+/* MENU */
+
+.toggle-menu {
+  width: 3.25rem;
+  height: 3.25rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.toggle-menu_wrapper {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 22px;
+  width: 100%;
+}
+.toggle-menu_line {
+  background-color: #fff;
+  height: 2px;
+  display: block;
+  float: right;
+  transition:.25s ease-in-out;
+  position: relative;
+  margin: 4px 0;
+  clear: both;
+}
+.anchor_wrapper {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.anchor_wrapper:hover .toggle-menu_line-first,
+.anchor_wrapper:hover .toggle-menu_line-second,
+.anchor_wrapper:hover .toggle-menu_line-third {
+  width: 0%;
+}
+.toggle-menu_line-first {
+  width: 28px;
+  right: 0;
+  margin-top: 0px;
+  transition-delay:.4s;
+}
+.toggle-menu_line-second {
+  width: 34px;
+  right: 0;
+  transition-delay:.525s;
+}
+.toggle-menu_line-third {
+  width: 22px;
+  right: 0;
+  margin-bottom: 0px;
+  transition-delay:.65s;
+}
+
+
 /*= End of NAVBAR HERO =*/
 /*=============================================<<<<<*/
