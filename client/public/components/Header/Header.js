@@ -44,19 +44,19 @@ class Header extends Component {
 
     return (
     <div className="is-fullwidth is-background">
-      <section className="hero trasparent is-medium is-fullheight">
+      <section className="hero trasparent is-medium is-fullheight" id="particles-js">
         <Navbar />
         {/* HERO */}
         <div className="hero-body">
 
           {/* HERO CONTAINER  */}
-          <div className="container has-text-centered">
+          <div className="container has-text-centered main_container">
 
             {/* TITLE SECTION */}
             <div data-wow-duration="0.7s" className="wow fadeInDown we-are">
-              <div className="line line_pre"><img src={line}/></div>
-                <span>We are</span>
-              <div className="line line_post"><img src={line}/></div>
+                <div className="line line_pre"><img src={line}/></div>
+                  <span>We are</span>
+                <div className="line line_post"><img src={line}/></div>
             </div>
             <span data-wow-duration="0.7s" className="wow fadeIn title brand">
               <img src={brand}/>
@@ -84,13 +84,17 @@ class Header extends Component {
                 {socialList}
               </div>
             {/* END OF SOCIALS */}
+
           </div>
           {/* END OF HERO CONTAINER */}
         </div>
         {/* END OF HERO */}
+
+        {/* BOUNCING ARROW */}
         <div className="arrow_down">
           <i className="fa fa-angle-down" aria-hidden="true"></i>
         </div>
+        {/* END OF BOUNCING ARROW */}
 
       </section>
     </div>

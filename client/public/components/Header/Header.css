@@ -11,6 +11,9 @@
 .trasparent {
   background-color: rgba(0, 0, 0, 0.5);
 }
+.main_container, .hero-head {
+  z-index: 9999;
+}
 
 /* NETGLITCH BRAND */
 
@@ -19,7 +22,7 @@
   display: block;
 }
 .brand img {
-  width: 50%;
+  width: 47%;
   user-drag: none;
   user-select: none;
   -moz-user-select: none;
@@ -66,6 +69,7 @@
 .we-are span{
   color: #fff;
   font-size: 22px;
+  font-weight: 100;
 }
 
 /* GET QUOTE */

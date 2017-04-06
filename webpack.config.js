@@ -30,7 +30,7 @@ module.exports = {
         {
           test: /\.(js|jsx)$/,
           use: 'babel-loader',
-          exclude: /node_modules/,
+          exclude: [/node_modules/, /particles.min.js/],
           include: resolve(__dirname, clientPath)
         },
         {
@@ -42,7 +42,7 @@ module.exports = {
           use: 'exports-loader?this.WOW'
         },
         {
-          test: /\.(jpe?g|png|gif|svg)$/i,
+          test: /\.(jpeg|png|gif|svg)$/i,
           loader: "file-loader?name=images/[name].[ext]&publicPath=/&outputPath=/"
         },
         {

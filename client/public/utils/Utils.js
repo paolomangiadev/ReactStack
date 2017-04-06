@@ -19,5 +19,13 @@ export default {
           scrollContainer: null // optional scroll container selector, otherwise use window
         }
       );
+    },
+
+    // REGISTER PARTICLES.js
+    registerParticles: function() {
+      return particlesJS.load('particles-js', '../external-libraries/particles/particlesjs-config.json',
+                function() {
+                console.log('callback - particles.js config loaded');
+             });
     }
 }
