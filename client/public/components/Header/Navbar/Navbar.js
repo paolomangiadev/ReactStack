@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import css from './Navbar.css';
 import classNames from 'classnames';
 
-const mimmo = 'mimmo';
-
 class Navbar extends Component {
   constructor(props){
     super(props);
