@@ -10,8 +10,8 @@
   height: 50vh;
   background-size: cover;
   -webkit-transition: .5s ease;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform:translate3d(0,0,0);
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
   transition: .5s ease;
   margin: 0;
   padding: 0;
@@ -21,14 +21,31 @@
   height: 100%;
   display: block;
   overflow: hidden;
+  -ms-overflow-style: none;
   margin: 0;
   padding: 0;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .anchor-wrap:hover .single-masonry {
   -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
   filter: grayscale(100%);
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: translateZ(0) scale(1.2, 1.2);
+  -moz-transform: translateZ(0) scale(1.2, 1.2);
+  -ms-transform: translateZ(0) scale(1.2, 1.2);
+  transform: translateZ(0) scale(1.2, 1.2);
 }
 /*= End of MASONRY CSS =*/
 /*=============================================<<<<<*/
