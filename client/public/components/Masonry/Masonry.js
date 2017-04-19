@@ -15,29 +15,39 @@ class Masonry extends Component {
         {
           src: "../../src/images/item-1.png",
           title: "Web Design",
-          description: ""
+          description: "We build websites",
+          link_txt: "See more...",
+          href: ""
         },
         {
           src: "../../src/images/item-2.png",
           title: "Graphic Design",
-          description: ""
+          description: "We Design custom graphics",
+          link_txt: "See more...",
+          href: ""
         },
         {
           src: "../../src/images/item-3.png",
           title: "Team Members",
-          description: ""
+          description: "Check our team",
+          link_txt: "See more...",
+          href: ""
         }
       ],
       line2: [
         {
           src: "../../src/images/item-4.png",
           title: "Technologies",
-          description: ""
+          description: "Technologies we love",
+          link_txt: "See more...",
+          href: ""
         },
         {
           src: "../../src/images/item-5.png",
           title: "Social Medias",
-          description: ""
+          description: "Social hacking",
+          link_txt: "See more...",
+          href: ""
         }
       ]
     }
@@ -47,7 +57,16 @@ class Masonry extends Component {
       masonryList1 = _.map(this.state.line1, function(item) {
         return (
           <a className="column anchor-wrap" href={item.href} key={item.title}>
-          <div className="single-masonry" style={{backgroundImage: `url(${item.src})`}}></div>
+            <div className="wrapper_noLine">
+              <div className="single-masonry" style={{backgroundImage: `url(${item.src})`}}></div>
+              <div className="text-masonry">
+                <h2 className="title">{item.title}</h2>
+                <p className="description_masonry">{item.description}</p>
+                <a className="item button is-danger is-inverted is-outlined button_masonry">
+                  {item.link_txt}
+                </a>
+              </div>
+            </div>
           </a>
         );
       });
@@ -57,7 +76,16 @@ class Masonry extends Component {
       masonryList2 = _.map(this.state.line2, function(item) {
         return (
           <a className="column anchor-wrap" href={item.href} key={item.title}>
-          <div className="single-masonry" style={{backgroundImage: `url(${item.src})`}}></div>
+            <div className="wrapper_noLine">
+              <div className="single-masonry" style={{backgroundImage: `url(${item.src})`}}></div>
+                <div className="text-masonry">
+                  <h2 className="title">{item.title}</h2>
+                  <p className="description_masonry">{item.description}</p>
+                  <a className="item button is-danger is-inverted is-outlined button_masonry">
+                    {item.link_txt}
+                  </a>
+                </div>
+            </div>
           </a>
         );
       });
