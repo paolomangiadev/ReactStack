@@ -8,6 +8,7 @@ import Utils from '../utils/Utils';
 import Header from './Header';
 import Aboutus from './Aboutus';
 import Masonry from './Masonry';
+import Quotes from './Quotes';
 import '../fonts/lato/lato.scss';
 import '../fonts/OpenSans/OpenSans.scss';
 
@@ -27,6 +28,7 @@ class Layout extends Component {
         <Header />
         <Aboutus />
         <Masonry />
+        <Quotes />
       </div>
     );
   }

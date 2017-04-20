@@ -17,21 +17,21 @@ class Masonry extends Component {
           title: "Web Design",
           description: "We build websites",
           link_txt: "See more...",
-          href: ""
+          href: "dfgd"
         },
         {
           src: "../../src/images/item-2.png",
           title: "Graphic Design",
           description: "We Design custom graphics",
           link_txt: "See more...",
-          href: ""
+          href: "dfgdfg"
         },
         {
           src: "../../src/images/item-3.png",
           title: "Team Members",
           description: "Check our team",
           link_txt: "See more...",
-          href: ""
+          href: "sfgdsg"
         }
       ],
       line2: [
@@ -40,14 +40,14 @@ class Masonry extends Component {
           title: "Technologies",
           description: "Technologies we love",
           link_txt: "See more...",
-          href: ""
+          href: "gfh"
         },
         {
           src: "../../src/images/item-5.png",
           title: "Social Medias",
           description: "Social hacking",
           link_txt: "See more...",
-          href: ""
+          href: "dfs"
         }
       ]
     }
@@ -62,9 +62,9 @@ class Masonry extends Component {
               <div className="text-masonry">
                 <h2 className="title">{item.title}</h2>
                 <p className="description_masonry">{item.description}</p>
-                <a className="item button is-danger is-inverted is-outlined button_masonry">
+                <div className="item button is-danger is-inverted is-outlined button_masonry">
                   {item.link_txt}
-                </a>
+                </div>
               </div>
             </div>
           </a>
@@ -81,9 +81,9 @@ class Masonry extends Component {
                 <div className="text-masonry">
                   <h2 className="title">{item.title}</h2>
                   <p className="description_masonry">{item.description}</p>
-                  <a className="item button is-danger is-inverted is-outlined button_masonry">
+                  <div className="item button is-danger is-inverted is-outlined button_masonry">
                     {item.link_txt}
-                  </a>
+                  </div>
                 </div>
             </div>
           </a>
