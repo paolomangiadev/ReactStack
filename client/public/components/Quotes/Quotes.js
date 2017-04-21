@@ -63,13 +63,13 @@ class Quotes extends Component {
   componentWillUnmount(){
     isMounted = false;
   }
-  
+
   render(){
     return (
       <div id="fourth" className="is-fullwidth is-quotes" onClick={this.poll.bind(this)}>
         <section className="hero is-fullheight quotes">
           <div className="hero-body">
-            <div className="container has-text-centered">
+            <div data-wow-duration="0.7s" className="wow fadeIn container has-text-centered">
               <h1 className="title">
                 Quotes We Love
               </h1>
