@@ -11,8 +11,7 @@
 .letusknow_subtitle {
   width: 70%;
   margin: 0 auto;
-  opacity: 0.5;
-  color: #363636;
+  color: rgba(54, 54, 54, 0.5);
 }
 .is-letusknow section.is-medium {
   background-color: #E6E6E6;
