@@ -1,0 +1,21 @@
+/*=============================================>>>>>
+= LetUsKnow US =
+===============================================>>>>>*/
+.title.letusknow_title {
+  color: #8394AC;
+  font-size: 50px;
+  opacity: 0.74;
+  margin-bottom: 3.5rem;
+  opacity: 0.85;
+}
+.letusknow_subtitle {
+  width: 70%;
+  margin: 0 auto;
+  opacity: 0.5;
+  color: #363636;
+}
+.is-letusknow section.is-medium {
+  background-color: #E6E6E6;
+}
+/*= End of LetUsKnow US =*/
+/*=============================================<<<<<*/
