@@ -1,0 +1,84 @@
+/*=============================================>>>>>
+= Footer =
+===============================================>>>>>*/
+.footer {
+  background: #191919;
+}
+.footer .title {
+  color: #fff;
+  font-family: "Lato";
+  margin-bottom: 0.5rem;
+}
+.title_divider {
+  width: 10%;
+  background: #fff;
+  display: block;
+  height: 2px;
+}
+.footer_description {
+  color: #95989A;
+  margin-top: 20px;
+  font-size: 1em;
+}
+.footer .social_wrapper {
+  width: 80%;
+}
+.footer .blue {
+  color: #8394AC;
+  font-family: 'Open Sans Bold';
+  font-size: 16px;
+}
+.footer .icon {
+  justify-content: flex-start;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.footer .icon i {
+  font-size: 22px;
+}
+.footer_contacts {
+  font-family: 'Open Sans Bold';
+}
+.footer .columns .column {
+  position: relative;
+}
+.footer_brand img {
+  width: 50%;
+}
+.footer_brand {
+  justify-content: flex-start;
+}
+.footer .hero-foot .level {
+  padding: 10px 0 0 0;
+  border-top: 1px solid rgba(149, 152, 154, 0.35);
+}
+.footer .hero-foot .level .subtitle {
+  color: #95989A;
+  font-size: 16px;
+}
+.third_col-footer {
+  text-align: right;
+}
+.third_col-footer .title_divider {
+  float: right;
+}
+.footer {
+  padding-bottom: 30px;
+}
+.hero.is-medium.footer .hero-body {
+  padding-bottom: 14rem;
+  padding-top: 6rem;
+}
+.third_col-footer div, .third_col-footer h2 {
+  clear: both;
+}
+.button_footer {
+  margin-top: 20px;
+  float: right;
+}
+/*= End of Footer =*/
+/*=============================================<<<<<*/

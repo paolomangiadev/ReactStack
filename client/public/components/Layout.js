@@ -10,6 +10,8 @@ import Aboutus from './Aboutus';
 import Masonry from './Masonry';
 import Quotes from './Quotes';
 import LetUsKnow from './LetUsKnow';
+import Apptypes from './Apptypes';
+import Footer from './Footer';
 import '../fonts/lato/lato.scss';
 import '../fonts/OpenSans/OpenSans.scss';
 
@@ -31,6 +33,8 @@ class Layout extends Component {
         <Masonry />
         <Quotes />
         <LetUsKnow />
+        <Apptypes />
+        <Footer />
       </div>
     );
   }
