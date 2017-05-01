@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import css from './Header.css';
 import Navbar from './Navbar';
+import Menu from './Navbar/Menu';
 import _ from 'lodash';
+import classNames from 'classnames';
 
 const brand = '../../src/images/netglitch.svg';
 const line = '../../src/images/line.png';
@@ -27,9 +29,21 @@ class Header extends Component {
           href: '#',
           src: '../../src/images/linkedin.png'
         }
-      ]
+      ],
+      menuopen: false
     }
   }
+
+  onUpdate(menuState) {
+    console.log('updated: ' + menuState);
+    if (menuState === false) {
+      this.setState({menuopen: true});
+    }
+    else {
+      this.setState({menuopen: false});
+    }
+  }
+
   render(){
     if (this.state.socials) {
       socialList = _.map(this.state.socials, function(item) {
@@ -41,11 +55,11 @@ class Header extends Component {
       });
     }
 
-
     return (
-    <div className="is-fullwidth is-background">
+    <div id="first" className={classNames('is-fullwidth', 'is-background', {menuopen: this.state.menuopen})}>
       <section className="hero trasparent is-medium is-fullheight" id="particles-js">
-        <Navbar />
+        <Navbar onUpdate={this.onUpdate.bind(this)} />
+        <Menu/>
         {/* HERO */}
         <div className="hero-body">
 

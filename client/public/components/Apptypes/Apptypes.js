@@ -50,7 +50,7 @@ class Apptypes extends Component {
     }
 
     return (
-      <div id="third" className="is-fullwidth is-background">
+      <div id="sixth" className="is-fullwidth is-background">
         <section className="hero is-fullheight Apptypes">
           <div data-wow-duration="1.5s" className="wow fadeIn columns is-gapless">
             {apptypesList1}

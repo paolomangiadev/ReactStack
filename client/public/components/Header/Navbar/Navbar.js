@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import css from './Navbar.css';
 import classNames from 'classnames';
+import Menu from './Menu';
 
 class Navbar extends Component {
   constructor(props){
@@ -17,6 +18,7 @@ class Navbar extends Component {
     else {
       this.setState({menuOpen: true});
     }
+    this.props.onUpdate(this.state.menuOpen);
   }
 
 
@@ -36,7 +38,6 @@ class Navbar extends Component {
               <span className="toggle-menu_line toggle-menu_cross-first"></span>
               <span className="toggle-menu_line toggle-menu_cross-second"></span>
               </div>
-
             </div>
             </a>
           </div>

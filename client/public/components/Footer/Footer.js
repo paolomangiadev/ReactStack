@@ -46,7 +46,7 @@ class Footer extends Component {
     }
 
     return (
-      <div id="sixth" className="is-fullwidth is-footer">
+      <div id="seventh" className="is-fullwidth is-footer">
         {/*<section className="hero">
           <div className="hero-body has-text-centered">
             <div className="container">

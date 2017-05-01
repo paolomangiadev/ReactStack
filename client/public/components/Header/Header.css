@@ -12,7 +12,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 .main_container, .hero-head {
-  z-index: 9999;
+  z-index: 1;
 }
 
 /* NETGLITCH BRAND */
@@ -123,6 +123,8 @@
 }
 .social_wrapper .socials {
   opacity: 0.75;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
   transition: 0.5s;
 }
 .social_wrapper .socials:hover {
