@@ -35,12 +35,14 @@ class Header extends Component {
   }
 
   onUpdate(menuState) {
-    console.log('updated: ' + menuState);
+    let html = document.getElementsByTagName( 'html' )[0];
     if (menuState === false) {
       this.setState({menuopen: true});
+      html.classList.add("noscroll");
     }
     else {
       this.setState({menuopen: false});
+      html.classList.remove("noscroll");
     }
   }
 
@@ -59,7 +61,7 @@ class Header extends Component {
     <div id="first" className={classNames('is-fullwidth', 'is-background', {menuopen: this.state.menuopen})}>
       <section className="hero trasparent is-medium is-fullheight" id="particles-js">
         <Navbar onUpdate={this.onUpdate.bind(this)} />
-        <Menu/>
+        <Menu socials={socialList}/>
         {/* HERO */}
         <div className="hero-body">
 

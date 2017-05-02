@@ -30,7 +30,7 @@ module.exports = {
         {
           test: /\.(js|jsx)$/,
           use: 'babel-loader',
-          exclude: [/node_modules/, /particles.min.js/],
+          exclude: [/node_modules/, /particles.min.js/, /smooth-scroll.min.js/],
           include: resolve(__dirname, clientPath)
         },
         {

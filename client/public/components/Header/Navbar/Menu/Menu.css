@@ -2,19 +2,47 @@
 = MENU HERO =
 ===============================================>>>>>*/
 #burgerMenu {
-  display: block;
-  position: absolute;
+  display: flex;
+  position: fixed;
   right: -100%;
   z-index: 2;
   width: 100%;
   height: 100%;
-  background: #191919;
-  -webkit-transition:.45s ease-in-out;
-  -moz-transition:.45s ease-in-out;
-  transition:.45s ease-in-out;
+  background: rgba(25, 25, 25, 0.98);
+  -webkit-transition:.35s ease-in-out;
+  -moz-transition:.35s ease-in-out;
+  transition:.35s ease-in-out;
+  transition-delay:.125s;
 }
 .menuopen #burgerMenu {
   right: 0%;
+}
+#burgerMenu .menu-list li a.blue {
+  color: #fff;
+  font-family: 'Lato Bold';
+  font-size: 2.5rem;
+  padding: 0.3em 0.75em;
+}
+#burgerMenu .menu-list li a.blue:hover {
+  background-color: transparent;
+  color: #8394AC;
+  -webkit-transform: translateX(-5px);
+  -moz-transform: translateX(-5px);
+  -o-transform: translateX(-5px);
+  -ms-transform: translateX(-5px);
+  transform: translateX(-5px);
+}
+#burgerMenu .socials {
+  display: block;
+  float: none;
+  clear: both;
+  width: 100%;
+}
+#burgerMenu .socials img {
+  width: 50%;
+}
+#burgerMenu .socials-level {
+  display: block;
 }
 /*= End of MENU HERO =*/
 /*=============================================<<<<<*/
