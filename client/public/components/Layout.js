@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import bulma from 'bulma/css/bulma.css';
 import FontAwesome from 'font-awesome/css/font-awesome.min.css';
 import particles from '../external-libraries/particles/particles.min.js';
 import smoothScroll from '../external-libraries/smoothscroll/smooth-scroll.min.js';
+import classNames from 'classnames';
 import axios from 'axios';
 import css from './Layout.css';
 import Utils from '../utils/Utils';
@@ -17,8 +19,22 @@ import '../fonts/lato/lato.scss';
 import '../fonts/OpenSans/OpenSans.scss';
 
 let html = document.getElementsByTagName( 'html' )[0];
+
 class Layout extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      back2Top: false
+    }
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
   componentDidMount() {
+
+    //check window scroll
+    window.addEventListener('scroll', this.handleScroll);
+
     //init of WOWJS
     const wow = Utils.registerWOW();
     wow.init();
@@ -28,15 +44,29 @@ class Layout extends Component {
 
     //init of smooth-scroll
     smoothScroll.init({
-      speed: 1800, // Integer. How fast to complete the scroll in milliseconds
+      speed: 700, // Integer. How fast to complete the scroll in milliseconds
       offset: 0, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-      easing: 'easeOutQuad',
+      easing: 'Linear',
       before: function (anchor, toggle) {
         html.classList.remove("noscroll");
       }
     });
-
   }
+
+  componentWillUnmount () {
+      window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll (event) {
+      let scrollTop = event.srcElement.body.scrollTop;
+      if (scrollTop > 450) {
+        this.setState({back2Top: true});
+      }
+      else {
+        this.setState({back2Top: false});
+      }
+  }
+
   render(){
     return (
       <div>
@@ -47,6 +77,9 @@ class Layout extends Component {
         <LetUsKnow />
         <Apptypes />
         <Footer />
+        <a data-scroll href="#first" className={classNames('toTopAnchor', {back2Top: this.state.back2Top})}>
+          <img src="../src/images/arrowup.png" />
+        </a>
       </div>
     );
   }

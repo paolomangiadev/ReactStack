@@ -48,6 +48,7 @@ class Header extends Component {
   }
 
   render(){
+
     if (this.state.socials) {
       socialList = _.map(this.state.socials, function(item) {
         return (
@@ -68,12 +69,11 @@ class Header extends Component {
 
           {/* HERO CONTAINER  */}
           <div className="container has-text-centered main_container">
-
             {/* TITLE SECTION */}
             <div data-wow-duration="0.7s" className="wow fadeInDown we-are">
-                <div className="line line_pre"><img src={line}/></div>
-                  <span>We are</span>
-                <div className="line line_post"><img src={line}/></div>
+              <div className="line line_pre"><img src={line}/></div>
+                <span>We are</span>
+              <div className="line line_post"><img src={line}/></div>
             </div>
             <span data-wow-duration="0.7s" className="wow fadeIn title brand">
               <img src={brand}/>
