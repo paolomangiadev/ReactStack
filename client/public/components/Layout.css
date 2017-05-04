@@ -15,5 +15,5 @@ p {
   font-size: 22px;
 }
 .noscroll { /* Block scroll when menu is open */
-  overflow-y:hidden;
+  overflow-y: hidden;
 }

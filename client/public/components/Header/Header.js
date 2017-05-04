@@ -7,7 +7,9 @@ import classNames from 'classnames';
 
 const brand = '../../src/images/netglitch.svg';
 const line = '../../src/images/line.png';
+
 let socialList;
+let html = document.getElementsByTagName( 'html' )[0];
 
 class Header extends Component {
   constructor(props){
@@ -35,7 +37,6 @@ class Header extends Component {
   }
 
   onUpdate(menuState) {
-    let html = document.getElementsByTagName( 'html' )[0];
     if (menuState === false) {
       this.setState({menuopen: true});
       html.classList.add("noscroll");
@@ -60,8 +61,8 @@ class Header extends Component {
     return (
     <div id="first" className={classNames('is-fullwidth', 'is-background', {menuopen: this.state.menuopen})}>
       <section className="hero trasparent is-medium is-fullheight" id="particles-js">
-        <Navbar onUpdate={this.onUpdate.bind(this)} />
-        <Menu socials={socialList}/>
+        <Navbar onUpdate={this.onUpdate.bind(this)} update={this.state.menuopen}/>
+        <Menu onUpdate={this.onUpdate.bind(this)} socials={socialList}/>
         {/* HERO */}
         <div className="hero-body">
 

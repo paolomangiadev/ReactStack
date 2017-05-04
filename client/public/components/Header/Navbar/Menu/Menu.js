@@ -7,6 +7,10 @@ class Menu extends Component {
     super(props);
   }
 
+  toggleMenu() {
+    this.props.onUpdate(true);
+  }
+
   render(){
     return (
     <section className="hero is-fullheight" id="burgerMenu">
@@ -27,22 +31,22 @@ class Menu extends Component {
             <div className="level-item has-text-right">
               <ul className="menu-list">
                 <li>
-                  <a className="blue" data-scroll href="#second">
+                  <a className="blue" data-scroll href="#second" onClick={this.toggleMenu.bind(this)}>
                     What we do
                   </a>
                 </li>
                 <li>
-                  <a className="blue" data-scroll href="#third">
+                  <a className="blue" data-scroll href="#third" onClick={this.toggleMenu.bind(this)}>
                     Services
                   </a>
                 </li>
                 <li>
-                  <a className="blue" data-scroll href="#sixth">
+                  <a className="blue" data-scroll href="#sixth" onClick={this.toggleMenu.bind(this)}>
                     Hire Us
                   </a>
                 </li>
                 <li>
-                  <a className="blue" data-scroll href="#seventh">
+                  <a className="blue" data-scroll href="#seventh" onClick={this.toggleMenu.bind(this)}>
                     Contact US
                   </a>
                 </li>

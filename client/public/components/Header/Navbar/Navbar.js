@@ -21,6 +21,9 @@ class Navbar extends Component {
     this.props.onUpdate(this.state.menuOpen);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({menuOpen: nextProps.update});
+  }
 
   render(){
     return (
