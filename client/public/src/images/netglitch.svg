@@ -1,13 +1,14 @@
 <svg id="Group_6" data-name="Group 6" xmlns="http://www.w3.org/2000/svg" viewBox="558 278 775 244">
   <defs>
     <style>
+
       .cls-1 {
         fill: #fff;
       }
 
       .cls-1, .cls-2 {
         font-size: 200px;
-        font-family: Metropolis1920, "Metropolis1920";
+        font-family: 'Metropolis 1920';
       }
 
       .cls-2 {
