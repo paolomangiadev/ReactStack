@@ -7,7 +7,7 @@
 
       .cls-1, .cls-2 {
         font-size: 200px;
-        font-family: Metropolis1920, "Metropolis 1920";
+        font-family: Metropolis1920, "Metropolis1920";
       }
 
       .cls-2 {
