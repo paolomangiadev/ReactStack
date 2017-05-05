@@ -5,7 +5,7 @@ import Menu from './Navbar/Menu';
 import _ from 'lodash';
 import classNames from 'classnames';
 
-const brand = '../../src/images/netglitch.svg';
+const brand = '../../src/images/netglitch.png';
 const line = '../../src/images/line.png';
 
 let socialList;

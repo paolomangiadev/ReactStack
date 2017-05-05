@@ -15,8 +15,9 @@ import Quotes from './Quotes';
 import LetUsKnow from './LetUsKnow';
 import Apptypes from './Apptypes';
 import Footer from './Footer';
-import '../fonts/lato/lato.scss';
+import '../fonts/Lato/Lato.scss';
 import '../fonts/OpenSans/OpenSans.scss';
+import '../fonts/Metropolis1920/Metropolis1920.scss';
 
 let html = document.getElementsByTagName( 'html' )[0];
 

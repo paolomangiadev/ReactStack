@@ -5,7 +5,7 @@ import ReactHtmlParser from 'react-html-parser';
 import _ from 'lodash';
 
 let socialList;
-const brand = '../../src/images/netglitch.svg';
+const brand = '../../src/images/netglitch.png';
 
 class Footer extends Component {
   constructor(props){

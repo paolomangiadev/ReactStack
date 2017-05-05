@@ -2,13 +2,24 @@
   <defs>
     <style>
 
+      @font-face {
+        font-family: "Metropolis1920";
+        src:
+            url("../../Metropolis1920/Metropolis1920.ttf") format("truetype"),
+            url("../../Metropolis1920/Metropolis1920.eot?") format("eot"),
+            url("../../Metropolis1920/Metropolis1920.woff") format("woff"),
+            url("../../Metropolis1920/Metropolis1920.svg#Metropolis1920") format("svg");
+        font-weight:normal;
+        font-style:normal;
+      }
+
       .cls-1 {
         fill: #fff;
       }
 
       .cls-1, .cls-2 {
         font-size: 200px;
-        font-family: 'Metropolis 1920';
+        font-family: "Metropolis1920";
       }
 
       .cls-2 {

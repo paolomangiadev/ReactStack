@@ -46,7 +46,7 @@ module.exports = {
           loader: "file-loader?name=images/[name].[ext]&publicPath=/&outputPath=/"
         },
         {
-          test: /\.(eot|svg|ttf|woff|woff2)$/,
+          test: /\.(eot|svg|ttf|woff|woff2)$/i,
           loader: 'file-loader?name=fonts/[name].[ext]'
         }
       ]
