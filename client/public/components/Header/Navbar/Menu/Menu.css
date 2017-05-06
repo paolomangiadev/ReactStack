@@ -5,10 +5,10 @@
   display: flex;
   position: fixed;
   right: -100%;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   height: 100%;
-  background: rgba(25, 25, 25, 0.98);
+  background: transparent;
   -webkit-transition:.35s ease-in-out;
   -moz-transition:.35s ease-in-out;
   transition:.35s ease-in-out;
@@ -43,6 +43,30 @@
 }
 #burgerMenu .socials-level {
   display: block;
+}
+.black-bg {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgb(25, 25, 25);
+  right: -100%;
+  -webkit-transition:.35s ease-in-out;
+  -moz-transition:.35s ease-in-out;
+  transition:.35s ease-in-out;
+  transition-delay:.125s;
+  z-index: 2;
+}
+.menuopen .black-bg {
+  right: 0;
+}
+canvas.particles-js-canvas-el {
+  -webkit-transition:.35s ease-in-out;
+  -moz-transition:.35s ease-in-out;
+  transition:.35s ease-in-out;
+}
+.menuopen canvas.particles-js-canvas-el {
+  z-index: 2;
 }
 /*= End of MENU HERO =*/
 /*=============================================<<<<<*/

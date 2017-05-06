@@ -59,7 +59,7 @@ class Layout extends Component {
   }
 
   handleScroll (event) {
-      let scrollTop = event.srcElement.body.scrollTop;
+      let scrollTop = event.srcElement ? event.srcElement.body.scrollTop : event.pageY;
       if (scrollTop > 450) {
         this.setState({back2Top: true});
       }

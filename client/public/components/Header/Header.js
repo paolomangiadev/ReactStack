@@ -63,6 +63,7 @@ class Header extends Component {
     <div id="first" className={classNames('is-fullwidth', 'is-background', {menuopen: this.state.menuopen})}>
       <section className="hero trasparent is-medium is-fullheight" id="particles-js">
         <Navbar onUpdate={this.onUpdate.bind(this)} update={this.state.menuopen}/>
+        <div className="black-bg"></div>
         <Menu onUpdate={this.onUpdate.bind(this)} socials={socialList}/>
         {/* HERO */}
         <div className="hero-body">
