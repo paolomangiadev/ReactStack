@@ -30,11 +30,9 @@ p {
   -moz-transition: 0.5s;
   transition: 0.5s;
 }
-
 .toTopAnchor.back2Top {
   opacity: 0.7;
 }
-
 .menuopen .particles-js-canvas-el {
   z-index: 2;
   background: rgba(25, 25, 25, 0.98);

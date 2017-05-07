@@ -37,12 +37,16 @@
   float: none;
   clear: both;
   width: 100%;
+  opacity: 0.75;
 }
 #burgerMenu .socials img {
   width: 50%;
 }
 #burgerMenu .socials-level {
   display: block;
+}
+#burgerMenu .socials:hover {
+  opacity: 1;
 }
 .black-bg {
   display: block;
