@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import bulma from 'bulma/css/bulma.css';
-import FontAwesome from 'font-awesome/css/font-awesome.min.css';
+import classNames from 'classnames';
 import particles from '../external-libraries/particles/particles.min.js';
 import smoothScroll from '../external-libraries/smoothscroll/smooth-scroll.min.js';
-import classNames from 'classnames';
 import axios from 'axios';
+import bulma from 'bulma/css/bulma.css';
 import css from './Layout.css';
 import Utils from '../utils/Utils';
 import Header from './Header';
@@ -15,9 +14,6 @@ import Quotes from './Quotes';
 import LetUsKnow from './LetUsKnow';
 import Apptypes from './Apptypes';
 import Footer from './Footer';
-import '../fonts/Lato/Lato.scss';
-import '../fonts/OpenSans/OpenSans.scss';
-import '../fonts/Metropolis1920/Metropolis1920.scss';
 
 let html = document.getElementsByTagName( 'html' )[0];
 
