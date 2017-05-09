@@ -2,7 +2,7 @@
 = QUOTES US =
 ===============================================>>>>>*/
 .is-quotes {
-  background: url('../../src/images/quotes-bg.jpeg') no-repeat;
+  background: url('../../../src/images/quotes-bg.jpeg') no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -36,7 +36,7 @@
   right: 0;
   top: -35px;
   margin: 0 auto;
-  background: url('../../src/images/before_quote.png') no-repeat;
+  background: url('../../../src/images/before_quote.png') no-repeat;
 }
 .quotes_container::after {
   content: "";
@@ -47,7 +47,7 @@
   right: 0;
   bottom: -35px;
   margin: 0 auto;
-  background: url('../../src/images/after_quote.png') no-repeat;
+  background: url('../../../src/images/after_quote.png') no-repeat;
 }
 .quotes_container .quote_text {
   position: relative;

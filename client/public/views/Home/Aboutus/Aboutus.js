@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import css from './Aboutus.css';
-const typography = '../../src/images/what-we-do.svg';
+const typography = '../../../src/images/what-we-do.svg';
 
 class Aboutus extends Component {
   componentDidMount() {

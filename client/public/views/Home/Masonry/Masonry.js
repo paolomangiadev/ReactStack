@@ -13,21 +13,21 @@ class Masonry extends Component {
     this.state = {
       line1: [
         {
-          src: "../../src/images/item-1.png",
+          src: "../../../src/images/item-1.png",
           title: "Web Design",
           description: "We build websites",
           link_txt: "See more...",
           href: "dfgd"
         },
         {
-          src: "../../src/images/item-2.png",
+          src: "../../../src/images/item-2.png",
           title: "Graphic Design",
           description: "We Design custom graphics",
           link_txt: "See more...",
           href: "dfgdfg"
         },
         {
-          src: "../../src/images/item-3.png",
+          src: "../../../src/images/item-3.png",
           title: "Team Members",
           description: "Check our team",
           link_txt: "See more...",
@@ -36,14 +36,14 @@ class Masonry extends Component {
       ],
       line2: [
         {
-          src: "../../src/images/item-4.png",
+          src: "../../../src/images/item-4.png",
           title: "Technologies",
           description: "Technologies we love",
           link_txt: "See more...",
           href: "gfh"
         },
         {
-          src: "../../src/images/item-5.png",
+          src: "../../../src/images/item-5.png",
           title: "Social Medias",
           description: "Social hacking",
           link_txt: "See more...",

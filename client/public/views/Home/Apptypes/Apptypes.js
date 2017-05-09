@@ -13,14 +13,14 @@ class Apptypes extends Component {
     this.state = {
       line1: [
         {
-          src: "../../src/images/webapp.png",
+          src: "../../../src/images/webapp.png",
           title: "Web App",
           description: "Desktop or WebApp",
           link_txt: "Get a Quote",
           href: "dfgdfg"
         },
         {
-          src: "../../src/images/mobileapp.png",
+          src: "../../../src/images/mobileapp.png",
           title: "Mobile App",
           description: "Smartphone and Tablet app",
           link_txt: "Get a Quote",
