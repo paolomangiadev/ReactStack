@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import css from './Menu.css';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 class Menu extends Component {
   constructor(props){
@@ -35,7 +36,7 @@ class Menu extends Component {
           <div className="level-right">
             <div className="level-item has-text-right">
               <ul className="menu-list">
-                <li>
+                <li><Link to='/webdesign'>WEBDESIGN</Link>
                   <a className="blue" href="#second" onClick={this.toggleMenu.bind(this)}>
                     What we do
                   </a>

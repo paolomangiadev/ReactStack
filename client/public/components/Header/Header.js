@@ -5,8 +5,8 @@ import Menu from './Navbar/Menu';
 import _ from 'lodash';
 import classNames from 'classnames';
 
-const brand = '../../src/images/netglitch.png';
-const line = '../../src/images/line.png';
+const brand = '../../../src/images/netglitch.png';
+const line = '../../../src/images/line.png';
 
 let socialList;
 let html = document.getElementsByTagName( 'html' )[0];
@@ -18,18 +18,18 @@ class Header extends Component {
       socials: [
         {
           href: 'https://www.facebook.com/Netglitch-639632836220315/',
-          src: '../../src/images/facebook.png'
+          src: '../../../src/images/facebook.png'
         },
         {
           href: 'https://www.instagram.com/netglitch/',
-          src: '../../src/images/instagram.png'
+          src: '../../../src/images/instagram.png'
         },
         {
-          href: '#second', src: '../../src/images/twitter.png'
+          href: '#second', src: '../../../src/images/twitter.png'
         },
         {
           href: '#',
-          src: '../../src/images/linkedin.png'
+          src: '../../../src/images/linkedin.png'
         }
       ],
       menuopen: false

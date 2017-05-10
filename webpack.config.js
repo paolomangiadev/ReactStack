@@ -43,11 +43,11 @@ module.exports = {
         },
         {
           test: /\.(jpeg|png|gif|svg)$/i,
-          loader: "file-loader?name=images/[name].[ext]&publicPath=/&outputPath=/"
+          use: "file-loader?name=images/[name].[ext]&publicPath=/&outputPath=/"
         },
         {
           test: /\.(eot|svg|ttf|woff|woff2)$/i,
-          loader: 'file-loader?name=fonts/[name].[ext]'
+          use: 'file-loader?name=fonts/[name].[ext]&publicPath=/&outputPath=/'
         }
       ]
     },
