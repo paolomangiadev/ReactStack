@@ -10,18 +10,10 @@ class WebDesign extends Component {
     super(props);
   }
 
-  componentDidMount() {
-
-  }
-
-  componentWillUnmount () {
-  }
-
   render(){
     return (
       <div>
-
-          {'YOLOOOOOOOOOO'}
+        
         <Footer />
         <a data-scroll href="#first" className={classNames('toTopAnchor')}>
           <img src="../../src/images/arrowup.png" />

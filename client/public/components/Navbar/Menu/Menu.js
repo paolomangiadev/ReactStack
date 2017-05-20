@@ -36,7 +36,12 @@ class Menu extends Component {
           <div className="level-right">
             <div className="level-item has-text-right">
               <ul className="menu-list">
-                <li><Link to='/webdesign'>WEBDESIGN</Link>
+                <li>
+                  <Link className="blue" to='/webdesign' onClick={this.toggleMenu.bind(this)}>
+                    WebDesign
+                  </Link>
+                </li>
+                <li>
                   <a className="blue" href="#second" onClick={this.toggleMenu.bind(this)}>
                     What we do
                   </a>

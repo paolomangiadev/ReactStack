@@ -5,7 +5,7 @@ import ReactHtmlParser from 'react-html-parser';
 import _ from 'lodash';
 
 let quote = {};
-let isMounted;
+let isMounted = false;
 
 class Quotes extends Component {
   constructor(props){
@@ -17,7 +17,8 @@ class Quotes extends Component {
 
   startPolling () {
     var self = this;
-    setTimeout(function() {
+    this.timestart = setTimeout(function() {
+      console.log('isMounted: ' + isMounted);
       if (!isMounted) { return; } // abandon
       self.poll(); // do it once and then start it up ...
       self._timer = setInterval(self.poll.bind(self), 13000);
@@ -62,6 +63,8 @@ class Quotes extends Component {
   }
   componentWillUnmount(){
     isMounted = false;
+    clearInterval(this._timer)
+    this._timer = false;
   }
 
   render(){

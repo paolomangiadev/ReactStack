@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import css from './Header.css';
-import Navbar from './Navbar';
-import Menu from './Navbar/Menu';
+import Navbar from '../Navbar';
+import Menu from '../Navbar/Menu';
 import _ from 'lodash';
 import classNames from 'classnames';
 
