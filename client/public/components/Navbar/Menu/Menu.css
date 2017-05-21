@@ -60,6 +60,7 @@
   transition:.35s ease-in-out;
   transition-delay:.125s;
   z-index: 2;
+  top: 0;
 }
 .menuopen .black-bg {
   right: 0;

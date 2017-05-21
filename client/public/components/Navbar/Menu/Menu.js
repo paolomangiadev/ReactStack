@@ -9,13 +9,8 @@ class Menu extends Component {
   }
 
   toggleMenu() {
-    this.props.onUpdate(true);
+    this.props.redirect(false);
   }
-
-  componentDidMount() {
-
-  }
-
 
   render(){
     return (
