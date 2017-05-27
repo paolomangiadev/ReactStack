@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Menu from '../../components/Navbar/Menu';
+import Header from '../../components/Header';
 
 let html = document.getElementsByTagName( 'html' )[0];
 
@@ -30,6 +31,7 @@ class WebDesign extends Component {
   render(){
     return (
       <div>
+        <Header />
         <Footer />
         <a data-scroll href="#first" className={classNames('toTopAnchor')}>
           <img src="../../src/images/arrowup.png" />

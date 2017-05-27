@@ -4,6 +4,7 @@ import {Router, Route, BrowserRouter, Switch } from 'react-router-dom';
 import classNames from 'classnames';
 import Navbar from './components/Navbar';
 import Menu from './components/Navbar/Menu';
+import Back2Top from './components/Back2Top';
 
 // ALL ROUTES
 import Home from './views/Home'; //home page
@@ -40,6 +41,7 @@ class Layout extends Component {
               <Route exact path="/" component={Home}/>
               <Route path="/webdesign" component={WebDesign}/>
             </Switch>
+            <Back2Top />
           </main>
         </BrowserRouter>
       </div>

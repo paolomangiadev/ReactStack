@@ -70,9 +70,9 @@ class Menu extends Component {
                   </Link>
                 </li>
                 <li>
-                  <a className="blue" href="#second" onClick={this.toggleMenu.bind(this)}>
+                  <Link className="blue" to="/" onClick={this.toggleMenu.bind(this)}>
                     What we do
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a className="blue" href="#third" onClick={this.toggleMenu.bind(this)}>
