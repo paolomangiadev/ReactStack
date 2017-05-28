@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import css from './Header.css';
+import css from './Header.scss';
 import Navbar from '../Navbar';
 import Menu from '../Navbar/Menu';
 import _ from 'lodash';
