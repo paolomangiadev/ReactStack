@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import css from './Menu.css';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 let socialList;
@@ -70,24 +71,24 @@ class Menu extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link className="blue" to="/" onClick={this.toggleMenu.bind(this)}>
+                  <Link className="blue" to="/#second" onClick={this.toggleMenu.bind(this)}>
                     What we do
                   </Link>
                 </li>
                 <li>
-                  <a className="blue" href="#third" onClick={this.toggleMenu.bind(this)}>
+                  <Link className="blue" to="/#third" onClick={this.toggleMenu.bind(this)}>
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="blue" href="#sixth" onClick={this.toggleMenu.bind(this)}>
+                  <Link className="blue" to="/#sixth" onClick={this.toggleMenu.bind(this)}>
                     Hire Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="blue" href="#seventh" onClick={this.toggleMenu.bind(this)}>
+                  <Link className="blue" to="#seventh" onClick={this.toggleMenu.bind(this)}>
                     Contact US
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

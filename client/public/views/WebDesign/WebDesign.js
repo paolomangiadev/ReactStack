@@ -32,10 +32,6 @@ class WebDesign extends Component {
     return (
       <div>
         <Header />
-        <Footer />
-        <a data-scroll href="#first" className={classNames('toTopAnchor')}>
-          <img src="../../src/images/arrowup.png" />
-        </a>
       </div>
     );
   }

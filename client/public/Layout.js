@@ -4,7 +4,9 @@ import {Router, Route, BrowserRouter, Switch } from 'react-router-dom';
 import classNames from 'classnames';
 import Navbar from './components/Navbar';
 import Menu from './components/Navbar/Menu';
+import Footer from './components/Footer';
 import Back2Top from './components/Back2Top';
+import { HashLink as Link } from 'react-router-hash-link';
 
 // ALL ROUTES
 import Home from './views/Home'; //home page
@@ -42,6 +44,7 @@ class Layout extends Component {
               <Route path="/webdesign" component={WebDesign}/>
             </Switch>
             <Back2Top />
+            <Footer />
           </main>
         </BrowserRouter>
       </div>

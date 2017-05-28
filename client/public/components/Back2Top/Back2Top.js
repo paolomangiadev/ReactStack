@@ -39,10 +39,14 @@ class Back2Top extends Component {
       }
   }
 
+  scrolltoTop(){
+    smoothScroll.animateScroll(0);
+  }
+
   render(){
     return (
       <div>
-        <a data-scroll href="#first" className={classNames('toTopAnchor', {back2Top: this.state.back2Top})}>
+        <a onClick={this.scrolltoTop} className={classNames('toTopAnchor', {back2Top: this.state.back2Top})}>
           <img src="../src/images/arrowup.png" />
         </a>
       </div>
