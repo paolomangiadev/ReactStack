@@ -48,6 +48,7 @@ class Menu extends Component {
     }
 
     return (
+    <div>
     <section className="hero is-fullheight" id="burgerMenu">
       <div className="hero-body">
        <div className="container">
@@ -98,6 +99,8 @@ class Menu extends Component {
        </div>
       </div>
     </section>
+      <div id="blackbg-wrapper"></div>
+    </div>
     );
   }
 }

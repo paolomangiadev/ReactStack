@@ -38,7 +38,7 @@ class Layout extends Component {
         <BrowserRouter>
           <main>
             <Navbar onUpdate={this.onUpdate.bind(this)}/>
-            <div className="black-bg"></div>
+            <div className="black-bg" id="particles-js"></div>
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route path="/webdesign" component={WebDesign}/>

@@ -37,7 +37,7 @@ class WebDesign extends Component {
   render(){
     return (
       <div>
-        <Header />
+        
       </div>
     );
   }

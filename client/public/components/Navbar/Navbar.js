@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import css from './Navbar.css';
 import classNames from 'classnames';
 import Menu from './Menu';
+import smoothScroll from '../../external-libraries/smoothscroll/smooth-scroll.min.js';
 
 class Navbar extends Component {
   constructor(props){
@@ -13,6 +14,7 @@ class Navbar extends Component {
 
   toggleMenu(){
     console.log('this is the current state: ' + this.state.menuOpen);
+    smoothScroll.animateScroll(0);
     if (this.state.menuOpen === true) {
       this.setState({menuOpen: false});
     }

@@ -61,7 +61,7 @@ class Header extends Component {
 
     return (
     <div id="first" className={classNames('is-fullwidth', 'is-background', {menuopen: this.state.menuopen})}>
-      <section className="hero trasparent is-medium is-fullheight" id="particles-js">
+      <section className="hero trasparent is-medium is-fullheight">
         {/* HERO */}
         <div className="hero-body">
           {/* HERO CONTAINER  */}
