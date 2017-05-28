@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Menu from '../../components/Navbar/Menu';
 import Header from '../../components/Header';
+import Utils from '../../utils/Utils';
 
 let html = document.getElementsByTagName( 'html' )[0];
 
@@ -26,6 +27,11 @@ class WebDesign extends Component {
       this.setState({menuopen: false});
       html.classList.remove("noscroll");
     }
+  }
+
+  componentDidMount() {
+    //init of Plugins
+    Utils.registerPlugins();
   }
 
   render(){

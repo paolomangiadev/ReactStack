@@ -23,12 +23,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    //init of WOWJS
-    const wow = Utils.registerWOW();
-    wow.init();
-
-    //init of particlesJS
-    Utils.registerParticles();
+    //init of Plugins
+    Utils.registerPlugins();
   }
 
   componentWillUnmount () {
