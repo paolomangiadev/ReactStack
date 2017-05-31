@@ -10,7 +10,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 // ALL ROUTES
 import Home from './views/Home'; //home page
-import WebDesign from './views/WebDesign'; //webdesign page
+import Services from './views/Services'; //webdesign page
 
 let html = document.getElementsByTagName( 'html' )[0];
 class Layout extends Component {
@@ -41,7 +41,7 @@ class Layout extends Component {
             <div className="black-bg"></div>
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route path="/webdesign" component={WebDesign}/>
+              <Route path="/services/:service" component={Services}/>
             </Switch>
             <Back2Top />
             <Footer />

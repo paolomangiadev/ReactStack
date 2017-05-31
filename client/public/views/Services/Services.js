@@ -9,7 +9,7 @@ import Utils from '../../utils/Utils';
 
 let html = document.getElementsByTagName( 'html' )[0];
 
-class WebDesign extends Component {
+class Services extends Component {
 
   constructor(props){
     super(props);
@@ -32,15 +32,15 @@ class WebDesign extends Component {
   componentDidMount() {
     //init of Plugins
     Utils.registerPlugins();
+    console.log('heylaaaa' + this.props.match.params.service);
   }
 
   render(){
     return (
-      <div>
-        <Header />
+      <div id="particles-js">
       </div>
     );
   }
 }
 
-export default WebDesign;
+export default Services;
