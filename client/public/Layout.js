@@ -7,6 +7,7 @@ import Menu from './components/Navbar/Menu';
 import Footer from './components/Footer';
 import Back2Top from './components/Back2Top';
 import { HashLink as Link } from 'react-router-hash-link';
+import css from './Responsive.css';
 
 // ALL ROUTES
 import Home from './views/Home'; //home page

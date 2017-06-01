@@ -82,7 +82,7 @@ class Footer extends Component {
                         </span>
                       </div>
                       <div className="column is-11">
-                        <a href="#">
+                        <a href="mailto:netglitch.dev@email.com">
                         <p className="blue">netglitch.dev@gmail.com</p>
                         </a>
                       </div>

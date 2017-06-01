@@ -51,25 +51,16 @@ class Menu extends Component {
     <section className="hero is-fullheight" id="burgerMenu">
       <div className="hero-body">
        <div className="container">
-         <nav className="level">
-           <div className="level-left">
-            <div className="level-item has-text-left socials-level">
+         <nav className="columns">
+           <div className="column is-half" id="socialsMenu">
+            <div className="has-text-left socials-level">
               {socialList}
             </div>
           </div>
 
-          <div className="level-item has-text-centered">
-
-          </div>
-
-          <div className="level-right">
-            <div className="level-item has-text-right">
+          <div className="column is-half" id="linksMenu">
+            <div className="has-text-right">
               <ul className="menu-list">
-                <li>
-                  <Link className="blue" to='/services/WebDesign' onClick={this.toggleMenu.bind(this)}>
-                    WebDesign
-                  </Link>
-                </li>
                 <li>
                   <Link className="blue" to="/#second" onClick={this.toggleMenu.bind(this)}>
                     What we do

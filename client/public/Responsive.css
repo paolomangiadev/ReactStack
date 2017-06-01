@@ -1,0 +1,123 @@
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1500px) {
+
+}
+@media screen and (max-width: 1280px) {
+
+}
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 980px) {
+.level-right {
+  display: none;
+}
+}
+@media screen and (max-width: 768px) {
+  .nav > .container {
+    width: 95% !important;
+  }
+  .is-fullwidth {
+    overflow: hidden !important;
+  }
+  .Masonry .columns.is-gapless {
+    height: auto !important;
+  }
+  .anchor-wrap {
+    height: 350px !important;
+  }
+  .brand img {
+    width: 85% !important;
+  }
+  .anchor-wrap .single-masonry {
+    -webkit-transform: scale(1.2) !important;
+    -moz-transform: scale(1.2) !important;
+    -ms-transform: scale(1.2) !important;
+    transform: scale(1.2) !important;
+    opacity: 0.35 !important;
+  }
+  .anchor-wrap .text-masonry::before, .anchor-wrap .text-masonry::after {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  .anchor-wrap .text-masonry .description_masonry, .anchor-wrap .text-masonry .title, .anchor-wrap .text-masonry .button_masonry {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .we-are {
+    width: 40% !important;
+  }
+  .social_wrapper {
+    width: 60% !important;
+  }
+  .social_wrapper .socials {
+    width: 25%;
+    display: inline-block;
+  }
+  .quotes_container {
+    width: 60%;
+  }
+  #burgerMenu .socials {
+    width: 30%;
+  }
+  #burgerMenu .column {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 750px) {
+  #burgerMenu .columns {
+    display: flex;
+    flex-direction: column;
+  }
+  #burgerMenu .column {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #burgerMenu .socials img {
+    width: 50%;
+  }
+  #burgerMenu #socialsMenu {
+    order: 2;
+  }
+  #burgerMenu #linksMenu {
+    order: 1;
+  }
+  #burgerMenu .column .has-text-left {
+    text-align: center;
+  }
+  #burgerMenu .socials {
+    width: 25%;
+    float: none;
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 650px) {
+
+}
+@media screen and (max-width: 600px) {
+  #burgerMenu .socials img {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #burgerMenu .socials img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 320px) {
+
+}

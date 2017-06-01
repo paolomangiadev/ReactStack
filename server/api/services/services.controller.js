@@ -8,12 +8,12 @@ export function index(req, res) {
     .catch(res_handler.handleError(res));
 }
 // Gets a sing item from DB
-export function show(req, res) {
-    res.send('GET ID handler for /services route.');
-}
+// export function show(req, res) {
+//     res.send('GET ID handler for /services route.' + req.query.id);
+// }
 // Gets a service item from its title
 export function getservice(req, res) {
-  return Service.findOne('title': req.body.title).exec()
+  return Service.findOne({'title': req.params.title}).exec()
     .then(res_handler.respondWithResult(res))
     .catch(res_handler.handleError(res));
 }

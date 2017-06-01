@@ -47,7 +47,7 @@
   position: relative;
 }
 .is-footer .footer_brand img {
-  width: 25%;
+  width: 200px;
 }
 .is-footer .footer_brand {
   justify-content: flex-start;
@@ -79,6 +79,10 @@
 .button_footer {
   margin-top: 20px;
   float: right;
+}
+.footer .button.is-danger.is-inverted.is-outlined:hover {
+  background-color: rgba(224, 224, 224, 0.25);
+  color: #fff;
 }
 /*= End of Footer =*/
 /*=============================================<<<<<*/

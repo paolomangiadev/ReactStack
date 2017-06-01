@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import Menu from '../../components/Navbar/Menu';
 import Header from '../../components/Header';
 import Utils from '../../utils/Utils';
+import axios from 'axios';
 
 let html = document.getElementsByTagName( 'html' )[0];
 
@@ -29,9 +30,23 @@ class Services extends Component {
     }
   }
 
+  getTemplate(service){
+    axios.get('http://localhost:3000/api/services/' + service.toLowerCase())
+    .then(
+      function(ok){
+        console.log('ok: ' + ok);
+      },
+      function(ko){
+        console.log('ko: ' + ko);
+      }
+    )
+    .catch((err) => console.log('error: ' + err));
+  }
+
   componentDidMount() {
     //init of Plugins
     Utils.registerPlugins();
+    this.getTemplate(this.props.match.params.service);
     console.log('heylaaaa' + this.props.match.params.service);
   }
 
