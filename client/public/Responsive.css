@@ -14,16 +14,23 @@
 
 }
 @media screen and (max-width: 980px) {
-.level-right {
-  display: none;
-}
-}
-@media screen and (max-width: 768px) {
-  .nav > .container {
-    width: 95% !important;
+  .level-right {
+    display: none;
   }
-  .is-fullwidth {
-    overflow: hidden !important;
+  .social_wrapper {
+    width: 40% !important;
+  }
+  .we-are {
+    width: 30% !important;
+  }
+  .description {
+    width: 100% !important;
+  }
+  .description_wrapper {
+    margin-left: 0 !important;
+  }
+  .typography_wrapper {
+    display: none !important;
   }
   .Masonry .columns.is-gapless {
     height: auto !important;
@@ -51,6 +58,36 @@
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
+  .Masonry .columns.is-gapless {
+    display: block;
+  }
+  .quotes_container {
+    width: 55% !important;
+  }
+  .letusknow_subtitle {
+    width: 90% !important;
+  }
+  .title.letusknow_title {
+    font-size: 35px !important;
+  }
+  .Apptypes .columns.is-gapless {
+    height: 100% !important;
+  }
+  .hero.is-fullheight.Apptypes {
+    height: 100% !important;
+    min-height: 0;
+  }
+  .is-footer .footer .social_wrapper {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav > .container {
+    width: 95% !important;
+  }
+  .is-fullwidth {
+    overflow: hidden !important;
+  }
   .we-are {
     width: 40% !important;
   }
@@ -72,6 +109,47 @@
     width: 50%;
     float: left;
     margin: 0 auto;
+  }
+  .Apptypes .anchor-wrap .text-apptypes .description_apptypes,
+  .Apptypes .anchor-wrap .text-apptypes .title,
+  .Apptypes .anchor-wrap .text-apptypes .button_apptypes {
+    opacity: 1 !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+  .Apptypes .text-apptypes .title {
+    padding-top: 10% !important;
+  }
+  .is-footer .footer .social_wrapper {
+    width: 50% !important;
+    float: left;
+  }
+  .is-footer .footer .columns .column {
+    clear: both;
+    width: 100%;
+    float: none;
+    display: inline-block;
+  }
+  .is-footer .third_col-footer {
+    text-align: left;
+    margin: 35px auto auto auto;
+  }
+  .is-footer .third_col-footer .title_divider {
+    float: left;
+  }
+  .column.socials {
+    width: 20% !important;
+    display: inline-block !important;
+    float: none !important;
+  }
+  .social_wrapper .column {
+    padding-left: 0;
+  }
+  .third_col-footer .button_footer {
+    float: left;
+  }
+  .hero.is-medium.footer .hero-body {
+    padding-bottom: 6rem;
   }
 }
 @media screen and (max-width: 750px) {
@@ -104,18 +182,71 @@
     float: none;
     display: inline-block;
   }
+  .quotes_container {
+    width: 70% !important;
+  }
+  .brand img {
+    width: 100% !important;
+  }
 }
 @media screen and (max-width: 650px) {
-
+  .description .description_center span {
+    font-size: 40px;
+  }
+  .get-quote a.item{
+    min-width: 115px;
+  }
 }
 @media screen and (max-width: 600px) {
   #burgerMenu .socials img {
     width: 70%;
   }
+  .we-are {
+    width: 55% !important;
+  }
+  .social_wrapper {
+    width: 75% !important;
+  }
+  .get-quote a.item {
+    min-width: 65px;
+  }
+  .description .description_center span {
+    font-size: 30px;
+  }
+  .description .description_center p {
+    font-size: 18px;
+  }
+  .quotes_container {
+    width: 85% !important;
+  }
+  .is-footer .footer_brand img {
+    width: 155px;
+  }
+  .social_wrapper {
+    width: 80% !important;
+  }
 }
 @media screen and (max-width: 480px) {
   #burgerMenu .socials img {
     width: 100%;
+  }
+  .social_wrapper {
+    width: 90% !important;
+  }
+  #fourth .quotes h1 {
+    font-size: 3em;
+  }
+  .quotes_container {
+    width: 100% !important;
+  }
+  .letusknow_subtitle {
+    width: 100% !important;
+  }
+  .is-footer .footer .social_wrapper {
+    width: 100% !important;
+  }
+  .is-footer .footer_contacts {
+    margin-top: 30px;
   }
 }
 @media screen and (max-width: 320px) {
