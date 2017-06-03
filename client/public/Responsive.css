@@ -196,6 +196,10 @@
   .get-quote a.item{
     min-width: 115px;
   }
+  .toTopAnchor {
+    bottom: 35px;
+    right: 5px;
+  }
 }
 @media screen and (max-width: 600px) {
   #burgerMenu .socials img {
@@ -247,6 +251,40 @@
   }
   .is-footer .footer_contacts {
     margin-top: 30px;
+  }
+  .we-are {
+    width: 90% !important;
+  }
+  .get-quote_wrapper .item.item_line_left {
+    margin: 0 20px 0 20px;
+  }
+  .get-quote_wrapper .item.item_line_right {
+    margin: 0 20px 0 20px;
+  }
+  .get-quote a.item {
+    min-width: 60px;
+  }
+  #fourth .quotes h1 {
+    font-size: 2.5em;
+  }
+  .quotes .quotes_container {
+    margin-bottom: 100px;
+  }
+  .description .description_center span {
+    font-size: 50px;
+  }
+  .description .description_center p {
+    padding-left: 15px;
+  }
+  .Masonry .text-masonry .title,
+  .Apptypes .anchor-wrap .text-apptypes .title {
+    padding-top: 18% !important;
+  }
+  .title.letusknow_title {
+    font-size: 40px !important;
+  }
+  .column.socials {
+    width: 25% !important;
   }
 }
 @media screen and (max-width: 320px) {

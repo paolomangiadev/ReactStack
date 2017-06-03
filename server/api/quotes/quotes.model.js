@@ -3,8 +3,9 @@ import mongoose from 'mongoose';
 
 var ChatSchema = new mongoose.Schema({
   name: String,
-  info: String,
-  active: Boolean
+  sender: String,
+  subject: String,
+  message: String
 });
 
 export default mongoose.model('Chat', ChatSchema);

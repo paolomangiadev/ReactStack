@@ -84,5 +84,9 @@
   background-color: rgba(224, 224, 224, 0.25);
   color: #fff;
 }
+.hero.is-medium.footer .hero-body {
+  padding-left: 0;
+  padding-right: 0;
+}
 /*= End of Footer =*/
 /*=============================================<<<<<*/
