@@ -2,9 +2,11 @@ import Quote from './quotes.model';
 import * as res_handler from '../res_handler';
 import config from '../../config';
 
-const nodemailer = require('nodemailer');
-const xoauth2 = require('xoauth2');
+import nodemailer from 'nodemailer';
+import Promise from 'bluebird';
+import * as templateService from './templateLoader';
 
+// DEFINE THE TRANSPORTER
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -19,9 +21,7 @@ let transporter = nodemailer.createTransport({
 
 // Gets a list items
 export function index(req, res) {
-  // return Quote.find().exec()
-  //   .then(res_handler.respondWithResult(res))
-  //   .catch(res_handler.handleError(res));
+
 }
 // Gets a sing item from DB
 export function show(req, res) {
@@ -29,35 +29,29 @@ export function show(req, res) {
 }
 // Creates a sing item inside DB
 export function create(req, res) {
-  // const quote = new Quote(req.body);
-  // chat.save()
-  //   .then(res_handler.respondWithResult(res, 201))
-  //   .catch(res_handler.handleError(res));
 
-  // submitted form datas (client-side)
-  const quote = {
+  let context = {
     name: req.body.name,
-    sender: req.body.sender,
-    subject: req.body.subject,
-    message: req.body.message
+    mail: req.body.sender
   }
 
-  // setup email data with unicode symbols
-  let mailOptions = {
-      from: req.body.name + ' <' + req.body.sender + '>', // sender address
-      to: 'paolo.mangia.dev@gmail.com', // list of receivers
-      subject: req.body.subject, // Subject line
-      text: quote.message, // plain text body
-      html: '<b>' + req.body.message + '</b>' // html body
-  };
-
-  //send email
-  return transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-        return console.log(error);
-    }
-    console.log('Message %s sent: %s', info.messageId, info.response);
+  //load the mail templates
+  templateService.loadTemplates(context, 'followup').then((res) => {
+    //send the email
+    return transporter.sendMail({ // setup email data with unicode symbols
+        from: context.name + ' < ' + context.mail + ' >', // sender address
+        to: 'paolo.mangia.dev@gmail.com', // list of receivers
+        subject: res.subject, // Subject line
+        text: res.text, // plain text body
+        html: res.html // html body
+      }, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
   });
+
 }
 // Updates a sing item inside DB
 export function update(req, res) {

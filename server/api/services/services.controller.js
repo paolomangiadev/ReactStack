@@ -1,5 +1,5 @@
 import Service from './services.model';
-import * as res_handler from '../res_handler'
+import * as res_handler from '../res_handler';
 
 // Gets a list items
 export function index(req, res) {
