@@ -23,8 +23,11 @@ export default function(app) {
 
   app.use('/', express.static(path.join(__dirname, clientPath)));
 
-  app.get('/**!(api)', function (req, res) {
-    res.sendFile(path.join(__dirname, clientPath + '/index.html'));
+  app.get('/*', function (req, res, next) {
+    if (req.url === '/api/services') return next();
+    else {
+      res.sendFile(path.join(__dirname, clientPath + '/index.html'));
+    }
   });
 
 };

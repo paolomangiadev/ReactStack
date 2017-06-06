@@ -12,6 +12,7 @@ import css from './Responsive.css';
 // ALL ROUTES
 import Home from './views/Home'; //home page
 import Services from './views/Services'; //webdesign page
+import GetAQuote from './views/GetAQuote'; // get-a-quote page
 
 let html = document.getElementsByTagName( 'html' )[0];
 class Layout extends Component {
@@ -43,6 +44,7 @@ class Layout extends Component {
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route path="/services/:service" component={Services}/>
+              <Route path="/get-a-quote" component={GetAQuote}/>
             </Switch>
             <Back2Top />
             <Footer />
