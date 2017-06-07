@@ -165,6 +165,13 @@
   background-color: transparent;
 }
 
+.NavbarWrapper .nav-left .nav-item:not(.backtoHome) {
+  display: none;
+}
+
+.NavbarWrapper .nav-left .nav-item.backtoHome {
+  font-size: 35px;
+}
 
 /*= End of NAVBAR HERO =*/
 /*=============================================<<<<<*/

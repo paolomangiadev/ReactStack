@@ -88,6 +88,20 @@ class Footer extends Component {
                       </div>
                     </div>
                   </div>
+
+                  <div className="footer_contacts">
+                    <div className="columns">
+                      <div className="column is-1">
+                        <span className="icon">
+                          <i className="fa fa-map-marker" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <div className="column is-11">
+                        <p className="blue">Milan, Italy</p>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
 
                 <div className="column second_col-footer">

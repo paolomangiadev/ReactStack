@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import Menu from '../Navbar/Menu';
 import _ from 'lodash';
 import classNames from 'classnames';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const brand = '../../../src/images/netglitch.png';
 const line = '../../../src/images/line.png';
@@ -61,7 +62,7 @@ class Header extends Component {
 
     return (
     <div id="first" className={classNames('is-fullwidth', 'is-background', {menuopen: this.state.menuopen})}>
-      <section className="hero trasparent is-medium is-fullheight" id="particles-js">
+      <section className="hero trasparent is-medium is-fullheight Home" id="particles-js">
         {/* HERO */}
         <div className="hero-body">
           {/* HERO CONTAINER  */}
@@ -83,9 +84,9 @@ class Header extends Component {
                 <div className="get-quote_wrapper left_wrapper">
                   <a className="item item_left">Services</a>
                   <div className="item item_line item_line_left"></div>
-                  <a className="item button is-danger is-inverted is-outlined">
+                  <Link to="/get-a-quote" className="item button is-danger is-inverted is-outlined">
                     Get a Quote
-                  </a>
+                  </Link>
                   <div className="item item_line item_line_right"></div>
                   <a className="item item_right">Jobs</a>
                 </div>

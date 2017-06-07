@@ -1,3 +1,19 @@
+/* GENERIC */
+
+.hero:not(.Home) canvas.particles-js-canvas-el {
+  opacity: 0;
+  -webkit-transition: .35s ease-in-out;
+  -moz-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
+  transition-delay: .125s;
+}
+
+.menuopen .hero:not(.Home) canvas.particles-js-canvas-el {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+
 @media screen and (max-width: 1920px) {
 
 }

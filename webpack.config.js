@@ -42,7 +42,7 @@ module.exports = {
           use: 'exports-loader?this.WOW'
         },
         {
-          test: /\.(jpeg|png|gif|svg)$/i,
+          test: /\.(jpeg|png|gif|svg|jpg)$/i,
           use: "file-loader?name=images/[name].[ext]&publicPath=/&outputPath=/"
         },
         {

@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Back2Top from './components/Back2Top';
 import { HashLink as Link } from 'react-router-hash-link';
 import css from './Responsive.css';
+import history from './history';
 
 // ALL ROUTES
 import Home from './views/Home'; //home page
@@ -21,6 +22,9 @@ class Layout extends Component {
     this.state = {
       menuopen: false
     }
+  }
+
+  componentDidMount() {
   }
 
   onUpdate(menuState) {
@@ -37,7 +41,7 @@ class Layout extends Component {
   render(){
     return (
       <div className={classNames('appwrapper', {menuopen: this.state.menuopen})}>
-        <BrowserRouter>
+        <Router history={history}>
           <main>
             <Navbar onUpdate={this.onUpdate.bind(this)}/>
             <div className="black-bg"></div>
@@ -49,7 +53,7 @@ class Layout extends Component {
             <Back2Top />
             <Footer />
           </main>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }
