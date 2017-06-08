@@ -23,3 +23,13 @@
 .GetAQuote .label {
   color: #fff;
 }
+
+/* DROPZONE CSS */
+
+#dropzone {
+    min-height: 150px;
+    border: 2px dashed rgb(38, 43, 49);
+    background: transparent;
+    color: #fff;
+    padding: 65px 40px;
+}

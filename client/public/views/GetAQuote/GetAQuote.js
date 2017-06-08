@@ -4,10 +4,12 @@ import classNames from 'classnames';
 import Utils from '../../utils/Utils';
 import css from './GetAQuote.css';
 import Dropzone  from '../../external-libraries/dropzonejs/dropzone.js';
-import Dropzonecss from './dropzone.css';
+import Dropzonebasiccss from '../../external-libraries/dropzonejs/basic.min.css';
+import Dropzonecss from '../../external-libraries/dropzonejs/dropzone.min.css';
 
 let html = document.getElementsByTagName( 'html' )[0];
-
+let that;
+let myDropzone;
 class Services extends Component {
 
   constructor(props){
@@ -17,7 +19,65 @@ class Services extends Component {
   componentDidMount() {
     //init of Plugins
     Utils.registerPlugins();
-    var myDropzone = new Dropzone("div#Dropzone-area", { url: "/file/post"});
+    that = this;
+    Dropzone.autoDiscover = false;
+    // myDropzone = new Dropzone(
+    //   "form#dropzone", {
+    //   url: "/api/quotes",
+    //   autoProcessQueue: false,
+    //   uploadMultiple: false,
+    //   previewsContainer: ".dropzone-previews",
+    //   accept: function(done) {
+    //
+    //   },
+    //   sending: function (file, xhr, formData) {
+    //     console.log(JSON.stringify(formData));
+    //   },
+    //   init: function () {
+    //     var customDropzone = this;
+    //     this.element.querySelector("#sendQuote").addEventListener("click", function(e) {
+    //       // Make sure that the form isn't actually being sent.
+    //       console.log('clicked');
+    //       e.preventDefault();
+    //       e.stopPropagation();
+    //       customDropzone.processQueue();
+    //     });
+    //   }
+    // });
+
+    var myDropzone = new Dropzone("form#dropzone", {
+      url: "/api/quotes",
+      autoProcessQueue: false,
+      addRemoveLinks: true,
+      uploadMultiple: true,
+      parallelUploads: 5,
+      init: function () {
+        var customDropzone = this;
+        this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+          // Make sure that the form isn't actually being sent.
+          e.preventDefault();
+          e.stopPropagation();
+          customDropzone.processQueue();
+        });
+      }
+    });
+
+    myDropzone.on("complete", function(file) {
+      myDropzone.removeAllFiles(true);
+    });
+
+    myDropzone.on("sending", function(a, b, c) {
+      console.log(a, b, c);
+    });
+
+    myDropzone.on("sending", function(file, xhr, formData) {
+      // Will send the filesize along with the file as POST data.
+      formData.append("mimmo", 'ciaooooo');
+    });
+
+    myDropzone.on("error", function(error, errorMessage) {
+      console.log(error, errorMessage);
+    });
   }
 
   render(){
@@ -41,8 +101,8 @@ class Services extends Component {
           <div className="hero-body">
             {/* HERO CONTAINER  */}
             <div className="container main_container">
+              <form className="dropzone" id="dropzone">
               <div className="columns">
-
                 <div className="column is-one-third">
                   <div className="columns">
                     <div className="column">
@@ -116,7 +176,7 @@ class Services extends Component {
                         <div className="field-body">
                           <div className="field">
                             <div className="control">
-                              <button type="submit" className="item button is-danger is-inverted is-outlined">
+                              <button type="submit" className="item button is-danger is-inverted is-outlined" id="sendQuote">
                                 Get a Quote
                               </button>
                             </div>
@@ -128,11 +188,17 @@ class Services extends Component {
 
                 </div>
 
-                <div className="column" id="Dropzone-area">
-
+                <div className="column">
+                  <div className="columns">
+                    <div className="column">
+                      <label className="label">Any project file ?:</label>
+                      <div className="dropzone-previews">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
               </div>
+              </form>
             </div>
           </div>
         </section>
