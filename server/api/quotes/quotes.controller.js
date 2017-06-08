@@ -30,6 +30,8 @@ export function show(req, res) {
 // Creates a sing item inside DB
 export function create(req, res) {
 
+  console.log(req.files);
+
   let context = {
     name: req.body.name,
     mail: req.body.sender

@@ -21,58 +21,44 @@ class Services extends Component {
     Utils.registerPlugins();
     that = this;
     Dropzone.autoDiscover = false;
-    // myDropzone = new Dropzone(
-    //   "form#dropzone", {
-    //   url: "/api/quotes",
-    //   autoProcessQueue: false,
-    //   uploadMultiple: false,
-    //   previewsContainer: ".dropzone-previews",
-    //   accept: function(done) {
-    //
-    //   },
-    //   sending: function (file, xhr, formData) {
-    //     console.log(JSON.stringify(formData));
-    //   },
-    //   init: function () {
-    //     var customDropzone = this;
-    //     this.element.querySelector("#sendQuote").addEventListener("click", function(e) {
-    //       // Make sure that the form isn't actually being sent.
-    //       console.log('clicked');
-    //       e.preventDefault();
-    //       e.stopPropagation();
-    //       customDropzone.processQueue();
-    //     });
-    //   }
-    // });
 
-    var myDropzone = new Dropzone("form#dropzone", {
+    var myDropzone = new Dropzone(
+      "div#dropzone", {
       url: "/api/quotes",
       autoProcessQueue: false,
       addRemoveLinks: true,
       uploadMultiple: true,
+      paramName: "file",
       parallelUploads: 5,
       init: function () {
         var customDropzone = this;
-        this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+        document.getElementById('sendQuote').addEventListener("click", function(e) {
           // Make sure that the form isn't actually being sent.
           e.preventDefault();
           e.stopPropagation();
+
           customDropzone.processQueue();
         });
       }
     });
 
     myDropzone.on("complete", function(file) {
-      myDropzone.removeAllFiles(true);
+      console.log('success: ' + file);
     });
 
-    myDropzone.on("sending", function(a, b, c) {
-      console.log(a, b, c);
+    myDropzone.on("success", function(file) {
+      console.log('success: ' + file);
+      myDropzone.removeFile(file);
+    });
+
+    myDropzone.on("queuecomplete", function () {
+        this.removeAllFiles();
     });
 
     myDropzone.on("sending", function(file, xhr, formData) {
       // Will send the filesize along with the file as POST data.
-      formData.append("mimmo", 'ciaooooo');
+      var name = "files";
+      formData.append(name, file);
     });
 
     myDropzone.on("error", function(error, errorMessage) {
@@ -101,7 +87,7 @@ class Services extends Component {
           <div className="hero-body">
             {/* HERO CONTAINER  */}
             <div className="container main_container">
-              <form className="dropzone" id="dropzone">
+              <form>
               <div className="columns">
                 <div className="column is-one-third">
                   <div className="columns">
@@ -192,7 +178,7 @@ class Services extends Component {
                   <div className="columns">
                     <div className="column">
                       <label className="label">Any project file ?:</label>
-                      <div className="dropzone-previews">
+                      <div className="dropzone" id="dropzone">
                       </div>
                     </div>
                   </div>
