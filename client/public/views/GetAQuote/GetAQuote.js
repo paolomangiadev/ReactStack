@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Utils from '../../utils/Utils';
 import css from './GetAQuote.css';
-import Dropzone  from '../../external-libraries/dropzonejs/dropzone.js';
+import Dropzone  from '../../external-libraries/dropzonejs/dropzone.min.js';
 import Dropzonebasiccss from '../../external-libraries/dropzonejs/basic.min.css';
 import Dropzonecss from '../../external-libraries/dropzonejs/dropzone.min.css';
 import update from 'immutability-helper';
@@ -57,15 +57,15 @@ class Services extends Component {
       addRemoveLinks: true,
       uploadMultiple: true,
       paramName: "file",
-      parallelUploads: 5,
       init: function () {
         var customDropzone = this;
         document.getElementById('sendQuote').addEventListener("click", function(e) {
           // Make sure that the form isn't actually being sent.
           e.preventDefault();
           e.stopPropagation();
+          console.log(myDropzone.getQueuedFiles());
           if (myDropzone.getQueuedFiles().length > 0) {
-              customDropzone.processQueue();
+            customDropzone.processQueue();
           } else {
             console.log(that.state.formInputs);
               // customDropzone.uploadFiles([{formInputs: that.state.formInputs}]); //send empty
@@ -85,16 +85,7 @@ class Services extends Component {
       console.log('success: ' + file);
     });
 
-    myDropzone.on("success", function(file) {
-      console.log('success: ' + file);
-      myDropzone.removeFile(file);
-    });
-
-    myDropzone.on("queuecomplete", function () {
-        this.removeAllFiles();
-    });
-
-    myDropzone.on("sending", function(file, xhr, formData) {
+    myDropzone.on("sendingmultiple", function(file, xhr, formData) {
       // Will send the filesize along with the file as POST data.
       console.log(formData);
       _.forEach(that.state.formInputs, function(value, key) {
@@ -206,7 +197,7 @@ class Services extends Component {
                         <div className="field-body">
                           <div className="field">
                             <div className="control">
-                              <button type="submit" className="item button is-danger is-inverted is-outlined" id="sendQuote">
+                              <button className="item button is-danger is-inverted is-outlined" id="sendQuote">
                                 Get a Quote
                               </button>
                             </div>

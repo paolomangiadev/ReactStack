@@ -6,6 +6,7 @@ import nodemailer from 'nodemailer';
 import Promise from 'bluebird';
 import * as templateService from './templateLoader';
 import _ from 'lodash';
+import path from 'path';
 
 // DEFINE THE TRANSPORTER
 let transporter = nodemailer.createTransport({
@@ -33,11 +34,20 @@ export function create(req, res) {
 
   if (req.files) {
     var data = req.body;
-    console.log(JSON.stringify(data));
-    console.log(req.files);
+    console.log('request DATA: ' + JSON.stringify(data));
+    console.log('---------------------------');
+    console.log('---------------------------');
+    console.log('request files: ' + JSON.stringify(req.files));
+    var attachments = [];
+    _.forEach(req.files, function(value, key) {
+      console.log('key: ' + key,' value: ' + value);
+      var fileName = path.parse(value.originalname);
+      attachments.push({'filename': fileName.name, 'path': value.path});
+    });
   }
   else {
     console.log(JSON.stringify(req.body));
+    var attachments = [];
   }
 
   let context = {
@@ -53,7 +63,8 @@ export function create(req, res) {
     //     to: 'paolo.mangia.dev@gmail.com', // list of receivers
     //     subject: res.subject, // Subject line
     //     text: res.text, // plain text body
-    //     html: res.html // html body
+    //     html: res.html, // html body
+    //     attachments: attachments
     //   }, (error, info) => {
     //     if (error) {
     //         return console.log(error);
