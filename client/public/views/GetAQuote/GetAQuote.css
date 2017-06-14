@@ -16,7 +16,14 @@
   width: 100%;
 }
 
-.GetAQuote .button.is-danger.is-inverted.is-outlined:hover {
+.GetAQuote .button.is-danger.is-inverted.is-outlined {
+  width: 100%;
+  float: none;
+  margin: 25px auto 0 auto;
+}
+
+.GetAQuote .button.is-danger.is-inverted.is-outlined:hover,
+.GetAQuote .button.is-danger.is-inverted.is-outlined:focus {
   background-color: rgba(224, 224, 224, 0.25);
   color: #fff;
 }

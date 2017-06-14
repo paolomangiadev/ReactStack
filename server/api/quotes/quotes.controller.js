@@ -65,9 +65,27 @@ export function create(req, res) {
     description: req.body.Description
   }
 
-  //load the mail templates
+  //load the mail templates of the user followup
   templateService.loadTemplates(context, 'followup').then((res) => {
-    // //send the email
+    // //send a followup mail to the user to know that everything went good
+    return transporter.sendMail({ // setup email data with unicode symbols
+        from: context.name + ' < ' + context.mail + ' >', // sender address
+        to: 'paolo.mangia.dev@gmail.com', // list of receivers
+        subject: res.subject, // Subject line
+        text: res.text, // plain text body
+        html: res.html, // html body
+        attachments: attachments
+      }, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+  });
+
+  //load the mail templates of the netglitch incoming quote request
+  templateService.loadTemplates(context, 'netglitch').then((res) => {
+    // //send the email to netglitch to let them know of a new incoming quote request
     return transporter.sendMail({ // setup email data with unicode symbols
         from: context.name + ' < ' + context.mail + ' >', // sender address
         to: 'paolo.mangia.dev@gmail.com', // list of receivers

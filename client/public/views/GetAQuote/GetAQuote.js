@@ -22,8 +22,24 @@ class Services extends Component {
         Email: '',
         AppType: 'Web App',
         Budget: '€ 1000 - 1500',
-        Description: ''
+        Description: '',
+        Company: '',
+        Phone: '',
+        buttonEnabled: false
       }
+    }
+    this.defaultState = this.state.formInputs;
+  }
+
+  formIsValid() {
+    if (this.state.formInputs.NameSurname != ''
+        && this.state.formInputs.Email != ''
+        && this.state.formInputs.Description != ''
+        ) {
+      return true;
+    }
+    else {
+      return false;
     }
   }
 
@@ -40,7 +56,17 @@ class Services extends Component {
         )
       )
     }).then((resolve) => {
-      console.log(this.state.formInputs[name]);
+      if (this.formIsValid()) {
+        // this.state.formInputs.buttonEnabled = true
+        this.setState(
+          update(this.state,
+            {formInputs:
+              {
+                buttonEnabled: {$set: true}
+              }
+            })
+        )
+      };
     });
   }
 
@@ -57,6 +83,7 @@ class Services extends Component {
       addRemoveLinks: true,
       uploadMultiple: true,
       paramName: "file",
+      parallelUploads: 5,
       init: function () {
         var customDropzone = this;
         document.getElementById('sendQuote').addEventListener("click", function(e) {
@@ -98,6 +125,8 @@ class Services extends Component {
           myDropzone.removeAllFiles();
         }, 3500);
         console.log('successful upload: ' + success);
+        that.setState({formInputs: that.defaultState});
+        console.log('state: ' + JSON.stringify(that.state.formInputs));
       }
     });
 
@@ -136,7 +165,7 @@ class Services extends Component {
                       <div className="field">
                         <label className="label">Name & Lastname: </label>
                         <p className="control">
-                          <input defaultValue={this.state.formInputs.NameSurname} onChange={e => this.changeInputValue(this, 'NameSurname', e)} className="input is-hovered" type="text" />
+                          <input value={this.state.formInputs.NameSurname} onChange={e => this.changeInputValue(this, 'NameSurname', e)} className="input is-hovered" type="text" />
                         </p>
                       </div>
                     </div>
@@ -147,7 +176,7 @@ class Services extends Component {
                       <div className="field">
                         <label className="label">E-Mail: </label>
                         <p className="control">
-                          <input defaultValue={this.state.formInputs.Email} onChange={e => this.changeInputValue(this, 'Email', e)} className="input" type="text" />
+                          <input type="email" value={this.state.formInputs.Email} onChange={e => this.changeInputValue(this, 'Email', e)} className="input" type="text" />
                         </p>
                       </div>
                     </div>
@@ -191,24 +220,8 @@ class Services extends Component {
                       <div className="field">
                         <label className="label">Describe your project: </label>
                         <p className="control">
-                          <textarea defaultValue={this.state.formInputs.Description} onChange={e => this.changeInputValue(this, 'Description', e)} className="textarea"></textarea>
+                          <textarea value={this.state.formInputs.Description} onChange={e => this.changeInputValue(this, 'Description', e)} className="textarea"></textarea>
                         </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="columns">
-                    <div className="column">
-                      <div className="field is-horizontal">
-                        <div className="field-body">
-                          <div className="field">
-                            <div className="control">
-                              <button className="item button is-danger is-inverted is-outlined" id="sendQuote">
-                                Get a Quote
-                              </button>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -216,9 +229,27 @@ class Services extends Component {
                 </div>
 
                 <div className="column">
+                <div className="columns">
+                    <div className="column">
+                      <div className="field">
+                        <label className="label">Company: </label>
+                        <p className="control">
+                          <input type="text" value={this.state.formInputs.Company} onChange={e => this.changeInputValue(this, 'Company', e)} className="input" type="text" />
+                        </p>
+                      </div>
+                    </div>
+                    <div className="column">
+                      <div className="field">
+                        <label className="label">Phone: </label>
+                        <p className="control">
+                          <input type="tel" value={this.state.formInputs.Phone} onChange={e => this.changeInputValue(this, 'Phone', e)} className="input" type="text" />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                   <div className="columns">
                     <div className="column">
-                      <label className="label">Any project file ?:</label>
+                      <label className="label">Any project file ?</label>
                       <div className="dropzone" id="dropzone">
                       </div>
                     </div>
@@ -226,6 +257,21 @@ class Services extends Component {
                 </div>
               </div>
               </form>
+              <div className="columns">
+                <div className="column">
+                  <div className="field is-horizontal">
+                    <div className="field-body">
+                      <div className="field">
+                        <div className="control">
+                          <button disabled={this.state.formInputs.buttonEnabled === false} className="item button is-danger is-inverted is-outlined is-medium" id="sendQuote">
+                            Get a Quote
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
