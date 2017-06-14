@@ -6,6 +6,8 @@ import css from './GetAQuote.css';
 import Dropzone  from '../../external-libraries/dropzonejs/dropzone.js';
 import Dropzonebasiccss from '../../external-libraries/dropzonejs/basic.min.css';
 import Dropzonecss from '../../external-libraries/dropzonejs/dropzone.min.css';
+import update from 'immutability-helper';
+import axios from 'axios';
 
 let html = document.getElementsByTagName( 'html' )[0];
 let that;
@@ -14,6 +16,32 @@ class Services extends Component {
 
   constructor(props){
     super(props);
+    this.state = {
+      formInputs: {
+        NameSurname: '',
+        Email: '',
+        AppType: 'Web App',
+        Budget: '€ 1000 - 1500',
+        Description: ''
+      }
+    }
+  }
+
+  changeInputValue (field, name, e) {
+    new Promise ((resolve, reject) => {
+      resolve(
+        this.setState(
+          update(this.state,
+            {formInputs:
+              {
+                [name]: {$set: e.target.value}
+              }
+            })
+        )
+      )
+    }).then((resolve) => {
+      console.log(this.state.formInputs[name]);
+    });
   }
 
   componentDidMount() {
@@ -36,8 +64,19 @@ class Services extends Component {
           // Make sure that the form isn't actually being sent.
           e.preventDefault();
           e.stopPropagation();
-
-          customDropzone.processQueue();
+          if (myDropzone.getQueuedFiles().length > 0) {
+              customDropzone.processQueue();
+          } else {
+            console.log(that.state.formInputs);
+              // customDropzone.uploadFiles([{formInputs: that.state.formInputs}]); //send empty
+              axios.post('/api/quotes', that.state.formInputs)
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          }
         });
       }
     });
@@ -57,13 +96,18 @@ class Services extends Component {
 
     myDropzone.on("sending", function(file, xhr, formData) {
       // Will send the filesize along with the file as POST data.
-      var name = "files";
-      formData.append(name, file);
+      console.log(formData);
+      _.forEach(that.state.formInputs, function(value, key) {
+        console.log(value, key);
+        formData.append(key, value);
+      });
+      //formData.append("formInputs", that.state.formInputs);
     });
 
     myDropzone.on("error", function(error, errorMessage) {
       console.log(error, errorMessage);
     });
+
   }
 
   render(){
@@ -95,7 +139,7 @@ class Services extends Component {
                       <div className="field">
                         <label className="label">Name & Lastname: </label>
                         <p className="control">
-                          <input className="input is-hovered" type="text" />
+                          <input defaultValue={this.state.formInputs.NameSurname} onChange={e => this.changeInputValue(this, 'NameSurname', e)} className="input is-hovered" type="text" />
                         </p>
                       </div>
                     </div>
@@ -106,7 +150,7 @@ class Services extends Component {
                       <div className="field">
                         <label className="label">E-Mail: </label>
                         <p className="control">
-                          <input className="input" type="text" />
+                          <input defaultValue={this.state.formInputs.Email} onChange={e => this.changeInputValue(this, 'Email', e)} className="input" type="text" />
                         </p>
                       </div>
                     </div>
@@ -118,9 +162,9 @@ class Services extends Component {
                         <label className="label">Application type: </label>
                         <p className="control">
                           <span className="select">
-                            <select>
-                              <option>Web App</option>
-                              <option>Mobile App</option>
+                            <select onChange={e => this.changeInputValue(this, 'AppType', e)}>
+                              <option defaultValue="Web App">Web App</option>
+                              <option value="Mobile App">Mobile App</option>
                             </select>
                           </span>
                         </p>
@@ -131,13 +175,13 @@ class Services extends Component {
                         <label className="label">Budget: </label>
                         <p className="control">
                           <span className="select">
-                            <select>
-                              <option>€ 1000 - 1500</option>
-                              <option>€ 1500 - 2000</option>
-                              <option>€ 2000 - 2500</option>
-                              <option>€ 3000 - 5000</option>
-                              <option>€ 5000+ </option>
-                              <option>€ 10000+ </option>
+                            <select onChange={e => this.changeInputValue(this, 'Budget', e)}>
+                              <option defaultValue="€ 1000 - 1500">€ 1000 - 1500</option>
+                              <option value="€ 1500 - 2000">€ 1500 - 2000</option>
+                              <option value="€ 2000 - 2500">€ 2000 - 2500</option>
+                              <option value="€ 3000 - 5000">€ 3000 - 5000</option>
+                              <option value="€ 5000+ ">€ 5000+ </option>
+                              <option value="€ 10000+ ">€ 10000+ </option>
                             </select>
                           </span>
                         </p>
@@ -150,7 +194,7 @@ class Services extends Component {
                       <div className="field">
                         <label className="label">Describe your project: </label>
                         <p className="control">
-                          <textarea className="textarea"></textarea>
+                          <textarea defaultValue={this.state.formInputs.Description} onChange={e => this.changeInputValue(this, 'Description', e)} className="textarea"></textarea>
                         </p>
                       </div>
                     </div>

@@ -9,6 +9,7 @@
 }
 .GetAQuote input, .GetAQuote textarea {
   background-color: transparent;
+  color: #ffffff;
 }
 
 .GetAQuote .select, .GetAQuote select {
@@ -22,6 +23,10 @@
 
 .GetAQuote .label {
   color: #fff;
+}
+
+.GetAQuote input:focus  + label {
+  color: red !important;
 }
 
 /* DROPZONE CSS */

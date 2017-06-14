@@ -5,6 +5,7 @@ import config from '../../config';
 import nodemailer from 'nodemailer';
 import Promise from 'bluebird';
 import * as templateService from './templateLoader';
+import _ from 'lodash';
 
 // DEFINE THE TRANSPORTER
 let transporter = nodemailer.createTransport({
@@ -30,7 +31,14 @@ export function show(req, res) {
 // Creates a sing item inside DB
 export function create(req, res) {
 
-  console.log(req.files);
+  if (req.files) {
+    var data = req.body;
+    console.log(JSON.stringify(data));
+    console.log(req.files);
+  }
+  else {
+    console.log(JSON.stringify(req.body));
+  }
 
   let context = {
     name: req.body.name,
@@ -39,19 +47,19 @@ export function create(req, res) {
 
   //load the mail templates
   templateService.loadTemplates(context, 'followup').then((res) => {
-    //send the email
-    return transporter.sendMail({ // setup email data with unicode symbols
-        from: context.name + ' < ' + context.mail + ' >', // sender address
-        to: 'paolo.mangia.dev@gmail.com', // list of receivers
-        subject: res.subject, // Subject line
-        text: res.text, // plain text body
-        html: res.html // html body
-      }, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-    });
+    // //send the email
+    // return transporter.sendMail({ // setup email data with unicode symbols
+    //     from: context.name + ' < ' + context.mail + ' >', // sender address
+    //     to: 'paolo.mangia.dev@gmail.com', // list of receivers
+    //     subject: res.subject, // Subject line
+    //     text: res.text, // plain text body
+    //     html: res.html // html body
+    //   }, (error, info) => {
+    //     if (error) {
+    //         return console.log(error);
+    //     }
+    //     console.log('Message %s sent: %s', info.messageId, info.response);
+    // });
   });
 
 }
