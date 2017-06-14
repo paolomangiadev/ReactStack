@@ -33,6 +33,7 @@ export function show(req, res) {
 export function create(req, res) {
 
   if (req.files) {
+    res.send(200, 'Files uploaded correctly');
     var data = req.body;
     console.log('request DATA: ' + JSON.stringify(data));
     console.log('---------------------------');
@@ -42,7 +43,13 @@ export function create(req, res) {
     _.forEach(req.files, function(value, key) {
       console.log('key: ' + key,' value: ' + value);
       var fileName = path.parse(value.originalname);
-      attachments.push({'filename': fileName.name, 'path': value.path});
+      attachments.push(
+        {
+          'filename': fileName.name,
+          'path': value.path,
+          'contentType': value.mimetype,
+          'encoding': value.encoding
+      });
     });
   }
   else {
@@ -51,26 +58,29 @@ export function create(req, res) {
   }
 
   let context = {
-    name: req.body.name,
-    mail: req.body.sender
+    name: req.body.NameSurname,
+    mail: req.body.Email,
+    apptype: req.body.AppType,
+    budget: req.body.Budget,
+    description: req.body.Description
   }
 
   //load the mail templates
   templateService.loadTemplates(context, 'followup').then((res) => {
     // //send the email
-    // return transporter.sendMail({ // setup email data with unicode symbols
-    //     from: context.name + ' < ' + context.mail + ' >', // sender address
-    //     to: 'paolo.mangia.dev@gmail.com', // list of receivers
-    //     subject: res.subject, // Subject line
-    //     text: res.text, // plain text body
-    //     html: res.html, // html body
-    //     attachments: attachments
-    //   }, (error, info) => {
-    //     if (error) {
-    //         return console.log(error);
-    //     }
-    //     console.log('Message %s sent: %s', info.messageId, info.response);
-    // });
+    return transporter.sendMail({ // setup email data with unicode symbols
+        from: context.name + ' < ' + context.mail + ' >', // sender address
+        to: 'paolo.mangia.dev@gmail.com', // list of receivers
+        subject: res.subject, // Subject line
+        text: res.text, // plain text body
+        html: res.html, // html body
+        attachments: attachments
+      }, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
   });
 
 }

@@ -81,18 +81,24 @@ class Services extends Component {
       }
     });
 
-    myDropzone.on("complete", function(file) {
-      console.log('success: ' + file);
-    });
-
     myDropzone.on("sendingmultiple", function(file, xhr, formData) {
       // Will send the filesize along with the file as POST data.
-      console.log(formData);
       _.forEach(that.state.formInputs, function(value, key) {
         console.log(value, key);
         formData.append(key, value);
       });
-      //formData.append("formInputs", that.state.formInputs);
+    });
+
+    myDropzone.on("completemultiple", function (success, error) {
+      if (error) {
+        alert('couldnt upload: ' + error);
+      }
+      else {
+        setTimeout(function(){
+          myDropzone.removeAllFiles();
+        }, 3500);
+        console.log('successful upload: ' + success);
+      }
     });
 
     myDropzone.on("error", function(error, errorMessage) {
