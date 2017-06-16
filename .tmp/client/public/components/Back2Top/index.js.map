@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/Back2Top/index.js"],"names":[],"mappings":";;;;;;AAAA","file":"index.js","sourcesContent":["import Back2Top from './Back2Top';\nexport default Back2Top;\n"]}

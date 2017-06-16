@@ -1,0 +1,308 @@
+/* GENERIC */
+
+.hero:not(.Home) canvas.particles-js-canvas-el {
+  opacity: 0;
+  -webkit-transition: .35s ease-in-out;
+  -moz-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
+  transition-delay: .125s;
+}
+
+.menuopen .hero:not(.Home) canvas.particles-js-canvas-el {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1500px) {
+
+}
+@media screen and (max-width: 1280px) {
+
+}
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 980px) {
+  .level-right {
+    display: none;
+  }
+  .social_wrapper {
+    width: 40% !important;
+  }
+  .we-are {
+    width: 30% !important;
+  }
+  .description {
+    width: 100% !important;
+  }
+  .description_wrapper {
+    margin-left: 0 !important;
+  }
+  .typography_wrapper {
+    display: none !important;
+  }
+  .Masonry .columns.is-gapless {
+    height: auto !important;
+  }
+  .anchor-wrap {
+    height: 350px !important;
+  }
+  .brand img {
+    width: 85% !important;
+  }
+  .anchor-wrap .single-masonry {
+    -webkit-transform: scale(1.2) !important;
+    -moz-transform: scale(1.2) !important;
+    -ms-transform: scale(1.2) !important;
+    transform: scale(1.2) !important;
+    opacity: 0.35 !important;
+  }
+  .anchor-wrap .text-masonry::before, .anchor-wrap .text-masonry::after {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  .anchor-wrap .text-masonry .description_masonry, .anchor-wrap .text-masonry .title, .anchor-wrap .text-masonry .button_masonry {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .Masonry .columns.is-gapless {
+    display: block;
+  }
+  .quotes_container {
+    width: 55% !important;
+  }
+  .letusknow_subtitle {
+    width: 90% !important;
+  }
+  .title.letusknow_title {
+    font-size: 35px !important;
+  }
+  .Apptypes .columns.is-gapless {
+    height: 100% !important;
+  }
+  .hero.is-fullheight.Apptypes {
+    height: 100% !important;
+    min-height: 0;
+  }
+  .is-footer .footer .social_wrapper {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav > .container {
+    width: 95% !important;
+  }
+  .is-fullwidth {
+    overflow: hidden !important;
+  }
+  .we-are {
+    width: 40% !important;
+  }
+  .social_wrapper {
+    width: 60% !important;
+  }
+  .social_wrapper .socials {
+    width: 25%;
+    display: inline-block;
+  }
+  .quotes_container {
+    width: 60%;
+  }
+  #burgerMenu .socials {
+    width: 30%;
+  }
+  #burgerMenu .column {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+  }
+  .Apptypes .anchor-wrap .text-apptypes .description_apptypes,
+  .Apptypes .anchor-wrap .text-apptypes .title,
+  .Apptypes .anchor-wrap .text-apptypes .button_apptypes {
+    opacity: 1 !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+  .Apptypes .text-apptypes .title {
+    padding-top: 10% !important;
+  }
+  .is-footer .footer .social_wrapper {
+    width: 50% !important;
+    float: left;
+  }
+  .is-footer .footer .columns .column {
+    clear: both;
+    width: 100%;
+    float: none;
+    display: inline-block;
+  }
+  .is-footer .third_col-footer {
+    text-align: left;
+    margin: 35px auto auto auto;
+  }
+  .is-footer .third_col-footer .title_divider {
+    float: left;
+  }
+  .column.socials {
+    width: 20% !important;
+    display: inline-block !important;
+    float: none !important;
+  }
+  .social_wrapper .column {
+    padding-left: 0;
+  }
+  .third_col-footer .button_footer {
+    float: left;
+  }
+  .hero.is-medium.footer .hero-body {
+    padding-bottom: 6rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  #burgerMenu .columns {
+    display: flex;
+    flex-direction: column;
+  }
+  #burgerMenu .column {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #burgerMenu .socials img {
+    width: 50%;
+  }
+  #burgerMenu #socialsMenu {
+    order: 2;
+  }
+  #burgerMenu #linksMenu {
+    order: 1;
+  }
+  #burgerMenu .column .has-text-left {
+    text-align: center;
+  }
+  #burgerMenu .socials {
+    width: 25%;
+    float: none;
+    display: inline-block;
+  }
+  .quotes_container {
+    width: 70% !important;
+  }
+  .brand img {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .description .description_center span {
+    font-size: 40px;
+  }
+  .get-quote a.item{
+    min-width: 115px;
+  }
+  .toTopAnchor {
+    bottom: 35px;
+    right: 5px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #burgerMenu .socials img {
+    width: 70%;
+  }
+  .we-are {
+    width: 55% !important;
+  }
+  .social_wrapper {
+    width: 75% !important;
+  }
+  .get-quote a.item {
+    min-width: 65px;
+  }
+  .description .description_center span {
+    font-size: 30px;
+  }
+  .description .description_center p {
+    font-size: 18px;
+  }
+  .quotes_container {
+    width: 85% !important;
+  }
+  .is-footer .footer_brand img {
+    width: 155px;
+  }
+  .social_wrapper {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  #burgerMenu .socials img {
+    width: 100%;
+  }
+  .social_wrapper {
+    width: 90% !important;
+  }
+  #fourth .quotes h1 {
+    font-size: 3em;
+  }
+  .quotes_container {
+    width: 100% !important;
+  }
+  .letusknow_subtitle {
+    width: 100% !important;
+  }
+  .is-footer .footer .social_wrapper {
+    width: 100% !important;
+  }
+  .is-footer .footer_contacts {
+    margin-top: 30px;
+  }
+  .we-are {
+    width: 90% !important;
+  }
+  .get-quote_wrapper .item.item_line_left {
+    margin: 0 20px 0 20px;
+  }
+  .get-quote_wrapper .item.item_line_right {
+    margin: 0 20px 0 20px;
+  }
+  .get-quote a.item {
+    min-width: 60px;
+  }
+  #fourth .quotes h1 {
+    font-size: 2.5em;
+  }
+  .quotes .quotes_container {
+    margin-bottom: 100px;
+  }
+  .description .description_center span {
+    font-size: 50px;
+  }
+  .description .description_center p {
+    padding-left: 15px;
+  }
+  .Masonry .text-masonry .title,
+  .Apptypes .anchor-wrap .text-apptypes .title {
+    padding-top: 18% !important;
+  }
+  .title.letusknow_title {
+    font-size: 40px !important;
+  }
+  .column.socials {
+    width: 20% !important;
+  }
+}
+@media screen and (max-width: 320px) {
+
+}

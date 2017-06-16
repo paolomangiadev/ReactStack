@@ -1,0 +1,77 @@
+/*=============================================>>>>>
+= MENU HERO =
+===============================================>>>>>*/
+#burgerMenu {
+  display: flex;
+  position: fixed;
+  right: -100%;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  -webkit-transition:.35s ease-in-out;
+  -moz-transition:.35s ease-in-out;
+  transition:.35s ease-in-out;
+  transition-delay:.125s;
+}
+.menuopen #burgerMenu {
+  right: 0%;
+}
+#burgerMenu .menu-list li a.blue {
+  color: #fff;
+  font-family: 'Lato Bold';
+  font-size: 2.5rem;
+  padding: 0.3em 0.75em;
+}
+#burgerMenu .menu-list li a.blue:hover {
+  background-color: transparent;
+  color: #8394AC;
+  -webkit-transform: translateX(-5px);
+  -moz-transform: translateX(-5px);
+  -o-transform: translateX(-5px);
+  -ms-transform: translateX(-5px);
+  transform: translateX(-5px);
+}
+#burgerMenu .socials {
+  display: block;
+  float: none;
+  clear: both;
+  width: 25%;
+  opacity: 0.75;
+}
+#burgerMenu .socials img {
+  width: 50%;
+}
+#burgerMenu .socials-level {
+  display: block;
+}
+#burgerMenu .socials:hover {
+  opacity: 1;
+}
+.black-bg {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgb(25, 25, 25);
+  right: -100%;
+  -webkit-transition:.35s ease-in-out;
+  -moz-transition:.35s ease-in-out;
+  transition:.35s ease-in-out;
+  transition-delay:.125s;
+  z-index: 2;
+  top: 0;
+}
+.menuopen .black-bg {
+  right: 0;
+}
+canvas.particles-js-canvas-el {
+  -webkit-transition:.35s ease-in-out;
+  -moz-transition:.35s ease-in-out;
+  transition:.35s ease-in-out;
+}
+.menuopen canvas.particles-js-canvas-el {
+  z-index: 2;
+}
+/*= End of MENU HERO =*/
+/*=============================================<<<<<*/

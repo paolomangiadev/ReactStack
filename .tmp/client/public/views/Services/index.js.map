@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/Services/index.js"],"names":[],"mappings":";;;;;;AAAA","file":"index.js","sourcesContent":["import Services from './Services';\r\nexport default Services;\r\n"]}

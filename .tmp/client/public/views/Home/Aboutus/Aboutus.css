@@ -1,0 +1,59 @@
+/*=============================================>>>>>
+= ABOUT US =
+===============================================>>>>>*/
+.aboutUs {
+  background-color: #E6E6E6;
+}
+.typography_wrapper {
+  width: 45%;
+  visibility: visible;
+  animation-duration: 0.7s;
+  float: left;
+  display: inline-block;
+}
+.title_typography {
+  display: flex;
+}
+
+/* DESCRIPTION */
+
+.description {
+  width: 55%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.description_center {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.description_center span {
+  color: rgba(53, 65, 83, 0.45);
+  font-size: 50px;
+  opacity: 0.74;
+}
+.description_wrapper {
+  margin-left: -150px;
+  position: relative;
+}
+.description_line {
+  width: 4px;
+  height: 100%;
+  background-color: #d0d0d0;
+  position: absolute;
+}
+.description_center p {
+  margin-top: 25px;
+  line-height: 1.5em;
+  opacity: 0.5;
+  padding-left: 40px;
+}
+
+
+/*= End of ABOUT US =*/
+/*=============================================<<<<<*/

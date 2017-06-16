@@ -1,0 +1,162 @@
+/*=============================================>>>>>
+= Apptypes CSS =
+===============================================>>>>>*/
+.Apptypes {
+  background: #000;
+}
+.Apptypes .columns.is-gapless {
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.Apptypes .single-apptypes {
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  top: -4px;
+  background-size: cover;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  transition: .5s ease;
+  opacity: 0.6;
+}
+.Apptypes .anchor-wrap {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.Apptypes .wrapper_noLine {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background: #000;
+}
+
+.Apptypes .anchor-wrap:hover .single-apptypes {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 0.35;
+}
+
+.Apptypes .text-apptypes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  color: #fff;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  text-align: center;
+  display: block;
+  opacity: 1;
+}
+
+.Apptypes .text-apptypes::before,
+.Apptypes .text-apptypes::after {
+  content: " ";
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+  margin: 0 auto;
+  z-index: 1;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  transition: .5s ease;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+}
+.Apptypes .text-apptypes::before {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  -webkit-transform: scale(0,1);
+  transform: scale(0,1);
+}
+.Apptypes .text-apptypes::after {
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  -webkit-transform: scale(1,0);
+  transform: scale(1,0);
+}
+.Apptypes .anchor-wrap:hover .text-apptypes::before,
+.Apptypes .anchor-wrap:hover .text-apptypes::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.Apptypes .text-apptypes .title {
+  color: #fff;
+  font-weight: 100;
+  text-transform: none;
+  padding-top: 35%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transform: translate3d(0,-20px,0);
+  transform: translate3d(0,-20px,0);
+}
+.Apptypes .text-apptypes .description_apptypes {
+  padding: 0px 2em;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  font-weight: 100;
+  font-size: 18px;
+}
+.Apptypes .text-apptypes .button_apptypes {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  -webkit-transform: translate3d(0,20px,0);
+  transform: translate3d(0,20px,0);
+  margin-top: 20px;
+  z-index: 2;
+}
+.Apptypes .text-apptypes .button.is-danger.button_apptypes:hover {
+  background-color: rgba(224, 224, 224, 0.25);
+  color: #fff;
+}
+.Apptypes .anchor-wrap:hover .text-apptypes .description_apptypes,
+.Apptypes .anchor-wrap:hover .text-apptypes .title,
+.Apptypes .anchor-wrap:hover .text-apptypes .button_apptypes {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+/*= End of Apptypes CSS =*/
+/*=============================================<<<<<*/
