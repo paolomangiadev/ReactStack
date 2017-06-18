@@ -2040,13 +2040,4 @@
 
   contentLoaded(window, Dropzone._autoDiscoverFunction);
 }).call(undefined);
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-}();
-
-;
 //# sourceMappingURL=dropzone.js.map

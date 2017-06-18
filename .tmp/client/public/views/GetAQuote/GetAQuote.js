@@ -4,37 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _promise = require('babel-runtime/core-js/promise');
-
-var _promise2 = _interopRequireDefault(_promise);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -78,17 +48,25 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var html = document.getElementsByTagName('html')[0];
 var that = void 0;
 var myDropzone = void 0;
 
 var Services = function (_Component) {
-  (0, _inherits3.default)(Services, _Component);
+  _inherits(Services, _Component);
 
   function Services(props) {
-    (0, _classCallCheck3.default)(this, Services);
+    _classCallCheck(this, Services);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Services.__proto__ || (0, _getPrototypeOf2.default)(Services)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Services.__proto__ || Object.getPrototypeOf(Services)).call(this, props));
 
     _this.state = {
       formInputs: {
@@ -106,7 +84,7 @@ var Services = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Services, [{
+  _createClass(Services, [{
     key: 'formIsValid',
     value: function formIsValid() {
       if (this.state.formInputs.NameSurname != '' && this.state.formInputs.Email != '' && this.state.formInputs.Description != '') {
@@ -120,8 +98,8 @@ var Services = function (_Component) {
     value: function changeInputValue(field, name, e) {
       var _this2 = this;
 
-      new _promise2.default(function (resolve, reject) {
-        resolve(_this2.setState((0, _immutabilityHelper2.default)(_this2.state, { formInputs: (0, _defineProperty3.default)({}, name, { $set: e.target.value })
+      new Promise(function (resolve, reject) {
+        resolve(_this2.setState((0, _immutabilityHelper2.default)(_this2.state, { formInputs: _defineProperty({}, name, { $set: e.target.value })
         })));
       }).then(function (resolve) {
         if (_this2.formIsValid()) {
@@ -187,7 +165,7 @@ var Services = function (_Component) {
           }, 3500);
           console.log('successful upload: ' + success);
           that.setState({ formInputs: that.defaultState });
-          console.log('state: ' + (0, _stringify2.default)(that.state.formInputs));
+          console.log('state: ' + JSON.stringify(that.state.formInputs));
         }
       });
 
@@ -284,7 +262,7 @@ var Services = function (_Component) {
                           _react2.default.createElement(
                             'p',
                             { className: 'control' },
-                            _react2.default.createElement('input', (0, _defineProperty3.default)({ type: 'email', value: this.state.formInputs.Email, onChange: function onChange(e) {
+                            _react2.default.createElement('input', _defineProperty({ type: 'email', value: this.state.formInputs.Email, onChange: function onChange(e) {
                                 return _this3.changeInputValue(_this3, 'Email', e);
                               }, className: 'input' }, 'type', 'text'))
                           )
@@ -434,7 +412,7 @@ var Services = function (_Component) {
                           _react2.default.createElement(
                             'p',
                             { className: 'control' },
-                            _react2.default.createElement('input', (0, _defineProperty3.default)({ type: 'text', value: this.state.formInputs.Company, onChange: function onChange(e) {
+                            _react2.default.createElement('input', _defineProperty({ type: 'text', value: this.state.formInputs.Company, onChange: function onChange(e) {
                                 return _this3.changeInputValue(_this3, 'Company', e);
                               }, className: 'input' }, 'type', 'text'))
                           )
@@ -454,7 +432,7 @@ var Services = function (_Component) {
                           _react2.default.createElement(
                             'p',
                             { className: 'control' },
-                            _react2.default.createElement('input', (0, _defineProperty3.default)({ type: 'tel', value: this.state.formInputs.Phone, onChange: function onChange(e) {
+                            _react2.default.createElement('input', _defineProperty({ type: 'tel', value: this.state.formInputs.Phone, onChange: function onChange(e) {
                                 return _this3.changeInputValue(_this3, 'Phone', e);
                               }, className: 'input' }, 'type', 'text'))
                           )
@@ -513,28 +491,9 @@ var Services = function (_Component) {
       );
     }
   }]);
+
   return Services;
 }(_react.Component);
 
-var _default = Services;
-exports.default = _default;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(html, 'html', 'C:/Users/Paolo/Desktop/Reactstack/client/public/views/GetAQuote/GetAQuote.js');
-
-  __REACT_HOT_LOADER__.register(that, 'that', 'C:/Users/Paolo/Desktop/Reactstack/client/public/views/GetAQuote/GetAQuote.js');
-
-  __REACT_HOT_LOADER__.register(myDropzone, 'myDropzone', 'C:/Users/Paolo/Desktop/Reactstack/client/public/views/GetAQuote/GetAQuote.js');
-
-  __REACT_HOT_LOADER__.register(Services, 'Services', 'C:/Users/Paolo/Desktop/Reactstack/client/public/views/GetAQuote/GetAQuote.js');
-
-  __REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Paolo/Desktop/Reactstack/client/public/views/GetAQuote/GetAQuote.js');
-}();
-
-;
+exports.default = Services;
 //# sourceMappingURL=GetAQuote.js.map

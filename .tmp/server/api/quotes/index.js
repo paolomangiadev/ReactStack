@@ -25,19 +25,4 @@ router.post('/', upload.any(), controller.create);
 // router.delete('/:id', controller.destroy);
 
 module.exports = router;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(router, 'router', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/index.js');
-
-  __REACT_HOT_LOADER__.register(storage, 'storage', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/index.js');
-
-  __REACT_HOT_LOADER__.register(upload, 'upload', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/index.js');
-}();
-
-;
 //# sourceMappingURL=index.js.map

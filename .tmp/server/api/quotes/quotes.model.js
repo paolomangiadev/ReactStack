@@ -17,20 +17,5 @@ var ChatSchema = new _mongoose2.default.Schema({
   message: String
 });
 
-var _default = _mongoose2.default.model('Chat', ChatSchema);
-
-exports.default = _default;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(ChatSchema, 'ChatSchema', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/quotes.model.js');
-
-  __REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/quotes.model.js');
-}();
-
-;
+exports.default = _mongoose2.default.model('Chat', ChatSchema);
 //# sourceMappingURL=quotes.model.js.map

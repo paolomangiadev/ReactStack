@@ -24,19 +24,5 @@ config.gmail = {
   accessToken: 'ya29.GlteBJ9ExM39tAMmdDw1wpgrmjKCz7Rlp12SknEmnzkvmx2KCtb4VMJLaDj0FL_tR5OUV-jtA_rm5Qhr_mXU6aZ4YJbkN9AG3hC4EeiQf-Rcp0oiW4GfszPgxC1T'
 };
 
-var _default = config;
-exports.default = _default;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(config, 'config', 'C:/Users/Paolo/Desktop/Reactstack/server/config.js');
-
-  __REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Paolo/Desktop/Reactstack/server/config.js');
-}();
-
-;
+exports.default = config;
 //# sourceMappingURL=config.js.map

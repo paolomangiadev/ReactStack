@@ -21,17 +21,4 @@ function handleError(res, statusCode) {
     console.log('ko: ' + statusCode + err);
   };
 }
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(respondWithResult, 'respondWithResult', 'C:/Users/Paolo/Desktop/Reactstack/server/api/res_handler.js');
-
-  __REACT_HOT_LOADER__.register(handleError, 'handleError', 'C:/Users/Paolo/Desktop/Reactstack/server/api/res_handler.js');
-}();
-
-;
 //# sourceMappingURL=res_handler.js.map

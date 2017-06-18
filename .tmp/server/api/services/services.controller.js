@@ -46,23 +46,4 @@ function update(req, res) {
 function destroy(req, res) {
   res.send('DELETE handler for /services route.');
 }
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(index, 'index', 'C:/Users/Paolo/Desktop/Reactstack/server/api/services/services.controller.js');
-
-  __REACT_HOT_LOADER__.register(getservice, 'getservice', 'C:/Users/Paolo/Desktop/Reactstack/server/api/services/services.controller.js');
-
-  __REACT_HOT_LOADER__.register(create, 'create', 'C:/Users/Paolo/Desktop/Reactstack/server/api/services/services.controller.js');
-
-  __REACT_HOT_LOADER__.register(update, 'update', 'C:/Users/Paolo/Desktop/Reactstack/server/api/services/services.controller.js');
-
-  __REACT_HOT_LOADER__.register(destroy, 'destroy', 'C:/Users/Paolo/Desktop/Reactstack/server/api/services/services.controller.js');
-}();
-
-;
 //# sourceMappingURL=services.controller.js.map

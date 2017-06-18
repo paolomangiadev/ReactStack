@@ -62,7 +62,9 @@ var config = {
   plugins: [
     extractCSS,
     extractSCSS,
-
+    new CopyWebpackPlugin([
+      { from: './client/public/index.html' }
+    ]),
   ]
 };
 

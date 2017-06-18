@@ -146,25 +146,4 @@ function update(req, res) {
 function destroy(req, res) {
   res.send('DELETE handler for /quotes route.');
 }
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(transporter, 'transporter', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/quotes.controller.js');
-
-  __REACT_HOT_LOADER__.register(index, 'index', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/quotes.controller.js');
-
-  __REACT_HOT_LOADER__.register(show, 'show', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/quotes.controller.js');
-
-  __REACT_HOT_LOADER__.register(create, 'create', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/quotes.controller.js');
-
-  __REACT_HOT_LOADER__.register(update, 'update', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/quotes.controller.js');
-
-  __REACT_HOT_LOADER__.register(destroy, 'destroy', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/quotes.controller.js');
-}();
-
-;
 //# sourceMappingURL=quotes.controller.js.map

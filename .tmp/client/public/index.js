@@ -22,22 +22,9 @@ require('./src/fonts/Metropolis1920/Metropolis1920.scss');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NODE_END = process.env.NODE_ENV = process.env.NODE_ENV || 'development'; // set dev
-
 (0, _reactDom.render)(_react2.default.createElement(_Layout2.default, null), document.getElementById('app'));
 
-if (module.hot && NODE_END === 'development') {
+if (module.hot) {
   module.hot.accept();
 }
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(NODE_END, 'NODE_END', 'C:/Users/Paolo/Desktop/Reactstack/client/public/index.js');
-}();
-
-;
 //# sourceMappingURL=index.js.map

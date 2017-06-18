@@ -10,15 +10,4 @@ if (env === 'development' || env === 'test') {
 
 // Export the application
 exports = module.exports = require('./server');
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(env, 'env', 'C:/Users/Paolo/Desktop/Reactstack/server/index.js');
-}();
-
-;
 //# sourceMappingURL=index.js.map

@@ -4,25 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -40,16 +22,23 @@ var _reactRouterHashLink = require('react-router-hash-link');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var socialList = void 0;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 // import { Link } from 'react-router-dom';
 
+
+var socialList = void 0;
+
 var Menu = function (_Component) {
-  (0, _inherits3.default)(Menu, _Component);
+  _inherits(Menu, _Component);
 
   function Menu(props) {
-    (0, _classCallCheck3.default)(this, Menu);
+    _classCallCheck(this, Menu);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Menu.__proto__ || (0, _getPrototypeOf2.default)(Menu)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
 
     _this.state = {
       socials: [{
@@ -69,7 +58,7 @@ var Menu = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Menu, [{
+  _createClass(Menu, [{
     key: 'toggleMenu',
     value: function toggleMenu() {
       this.props.redirect(false);
@@ -167,24 +156,9 @@ var Menu = function (_Component) {
       );
     }
   }]);
+
   return Menu;
 }(_react.Component);
 
-var _default = Menu;
-exports.default = _default;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(socialList, 'socialList', 'C:/Users/Paolo/Desktop/Reactstack/client/public/components/Navbar/Menu/Menu.js');
-
-  __REACT_HOT_LOADER__.register(Menu, 'Menu', 'C:/Users/Paolo/Desktop/Reactstack/client/public/components/Navbar/Menu/Menu.js');
-
-  __REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Paolo/Desktop/Reactstack/client/public/components/Navbar/Menu/Menu.js');
-}();
-
-;
+exports.default = Menu;
 //# sourceMappingURL=Menu.js.map

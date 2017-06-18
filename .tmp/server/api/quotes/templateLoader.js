@@ -43,17 +43,4 @@ function loadTemplates(context, templatePath) {
     });
   });
 }
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(EmailTemplate, 'EmailTemplate', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/templateLoader.js');
-
-  __REACT_HOT_LOADER__.register(loadTemplates, 'loadTemplates', 'C:/Users/Paolo/Desktop/Reactstack/server/api/quotes/templateLoader.js');
-}();
-
-;
 //# sourceMappingURL=templateLoader.js.map

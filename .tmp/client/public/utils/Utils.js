@@ -37,7 +37,7 @@ function registerParticles() {
   });
 }
 
-var _default = {
+exports.default = {
   registerPlugins: function registerPlugins() {
     var wow = registerWOW();
     return {
@@ -46,20 +46,4 @@ var _default = {
     };
   }
 };
-exports.default = _default;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(registerWOW, 'registerWOW', 'C:/Users/Paolo/Desktop/Reactstack/client/public/utils/Utils.js');
-
-  __REACT_HOT_LOADER__.register(registerParticles, 'registerParticles', 'C:/Users/Paolo/Desktop/Reactstack/client/public/utils/Utils.js');
-
-  __REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Paolo/Desktop/Reactstack/client/public/utils/Utils.js');
-}();
-
-;
 //# sourceMappingURL=Utils.js.map

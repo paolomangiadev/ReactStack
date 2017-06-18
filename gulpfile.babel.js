@@ -179,7 +179,12 @@ gulp.task('build:prod', ['copy:production-webpack'], function (cb) {
     console.log(stderr);
     cb(err);
   });
-})
+});
+
+//clean the distribution
+gulp.task('clean:public-folder', ['build:prod'], () => {
+    return del([`${paths.prod}/public`], {dot: true})
+});
 
 gulp.task('build:production', cb => {
     runSequence(['clean:production-dist',
@@ -191,6 +196,7 @@ gulp.task('build:production', cb => {
                  'build:production-client',
                  'copy:production-webpack',
                  'build:prod',
+                 'clean:public-folder',
                ], // ordine di lancio tasks gulp
         //'watch',
         cb);

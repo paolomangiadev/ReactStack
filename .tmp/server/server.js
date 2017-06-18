@@ -66,19 +66,4 @@ server.listen(_config2.default.serverPort, function () {
 
 // Expose app
 exports = module.exports = server;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(app, 'app', 'C:/Users/Paolo/Desktop/Reactstack/server/server.js');
-
-  __REACT_HOT_LOADER__.register(server, 'server', 'C:/Users/Paolo/Desktop/Reactstack/server/server.js');
-
-  __REACT_HOT_LOADER__.register(io, 'io', 'C:/Users/Paolo/Desktop/Reactstack/server/server.js');
-}();
-
-;
 //# sourceMappingURL=server.js.map

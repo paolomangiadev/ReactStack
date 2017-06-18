@@ -4,25 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -46,16 +28,22 @@ var _lodash2 = _interopRequireDefault(_lodash);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var quote = {};
 var isMounted = false;
 
 var Quotes = function (_Component) {
-  (0, _inherits3.default)(Quotes, _Component);
+  _inherits(Quotes, _Component);
 
   function Quotes(props) {
-    (0, _classCallCheck3.default)(this, Quotes);
+    _classCallCheck(this, Quotes);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Quotes.__proto__ || (0, _getPrototypeOf2.default)(Quotes)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Quotes.__proto__ || Object.getPrototypeOf(Quotes)).call(this, props));
 
     _this.state = {
       quote: quote
@@ -63,7 +51,7 @@ var Quotes = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Quotes, [{
+  _createClass(Quotes, [{
     key: 'startPolling',
     value: function startPolling() {
       var self = this;
@@ -183,26 +171,9 @@ var Quotes = function (_Component) {
       );
     }
   }]);
+
   return Quotes;
 }(_react.Component);
 
-var _default = Quotes;
-exports.default = _default;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(quote, 'quote', 'C:/Users/Paolo/Desktop/Reactstack/client/public/views/Home/Quotes/Quotes.js');
-
-  __REACT_HOT_LOADER__.register(isMounted, 'isMounted', 'C:/Users/Paolo/Desktop/Reactstack/client/public/views/Home/Quotes/Quotes.js');
-
-  __REACT_HOT_LOADER__.register(Quotes, 'Quotes', 'C:/Users/Paolo/Desktop/Reactstack/client/public/views/Home/Quotes/Quotes.js');
-
-  __REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Paolo/Desktop/Reactstack/client/public/views/Home/Quotes/Quotes.js');
-}();
-
-;
+exports.default = Quotes;
 //# sourceMappingURL=Quotes.js.map
