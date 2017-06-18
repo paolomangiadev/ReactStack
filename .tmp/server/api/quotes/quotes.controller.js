@@ -81,7 +81,6 @@ function create(req, res) {
     console.log('request files: ' + (0, _stringify2.default)(req.files));
     var attachments = [];
     _lodash2.default.forEach(req.files, function (value, key) {
-      console.log('key: ' + key, ' value: ' + value);
       var fileName = _path2.default.parse(value.originalname);
       attachments.push({
         'filename': fileName.name,
@@ -114,7 +113,7 @@ function create(req, res) {
       attachments: attachments
     }, function (error, info) {
       if (error) {
-        return console.log(error);
+        return console.log('errore: ' + error);
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
     });

@@ -41,7 +41,6 @@ export function create(req, res) {
     console.log('request files: ' + JSON.stringify(req.files));
     var attachments = [];
     _.forEach(req.files, function(value, key) {
-      console.log('key: ' + key,' value: ' + value);
       var fileName = path.parse(value.originalname);
       attachments.push(
         {
@@ -77,7 +76,7 @@ export function create(req, res) {
         attachments: attachments
       }, (error, info) => {
         if (error) {
-            return console.log(error);
+            return console.log('errore: ' + error);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
