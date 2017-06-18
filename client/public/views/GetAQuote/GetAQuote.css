@@ -1,11 +1,12 @@
-.GetAQuoteHeading {
+.hero.is-primary.GetAQuoteHeading {
+  background-color: rgb(18, 20, 23);
   background: url('../../src/images/getaquote.jpg') no-repeat;
 }
 .GetAQuoteHeading .title {
   font-size: 50px;
 }
-.GetAQuote {
-  background: rgb(18, 20, 23);
+.trasparent.GetAQuote {
+  background-color: rgb(18, 20, 23);
 }
 .GetAQuote input, .GetAQuote textarea {
   background-color: transparent;

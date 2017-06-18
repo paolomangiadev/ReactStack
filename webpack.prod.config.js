@@ -35,7 +35,18 @@ var config = {
         use: extractSCSS.extract({
           fallback: 'style-loader',
           //resolve-url-loader may be chained before sass-loader if necessary
-          use: ['css-loader', 'sass-loader']
+          use: [
+            {
+              loader: 'css-loader'
+            }, {
+              loader: 'sass-loader',
+              options: {
+                vars: {
+                  assets: '../../src/images',
+                  env: process.env.NODE_ENV,
+                }
+              },
+            }]
         })
       },
       {
