@@ -26,7 +26,7 @@ export default function(app) {
     }
 
     else if (env === 'production') {
-      const clientPath = '../../dist/client';
+      const clientPath = '../../prod/client';
       resolve(clientPath);
     }
   }).then(function(clientPath){

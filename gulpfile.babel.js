@@ -10,6 +10,8 @@ import browserify from 'gulp-browserify';
 import browserSync from 'browser-sync';
 import gutil from 'gulp-util';
 import webpack from 'webpack-stream';
+import child_process from 'child_process';
+var execute = child_process.exec;
 // import webpackconfig from './webpack.config.js';
 
 browserSync.create()
@@ -171,6 +173,14 @@ gulp.task('copy:production-webpack', ['build:production-client'], function() {
         .pipe(gulp.dest(`${paths.prod}/`));
 });
 
+gulp.task('build:prod', ['copy:production-webpack'], function (cb) {
+  execute('cd \dist && set NODE_ENV=production && webpack -p --config webpack.prod.config.js', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+})
+
 gulp.task('build:production', cb => {
     runSequence(['clean:production-dist',
                  'transpile:production-server',
@@ -179,7 +189,8 @@ gulp.task('build:production', cb => {
                  'copy:production-styles',
                  'copy:production-mainstyle',
                  'build:production-client',
-                 'copy:production-webpack'
+                 'copy:production-webpack',
+                 'build:prod',
                ], // ordine di lancio tasks gulp
         //'watch',
         cb);

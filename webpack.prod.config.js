@@ -2,12 +2,13 @@ var Webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const clientPath = './client/public/';
-var buildPath = path.resolve(__dirname, 'dist', 'client');
+var buildPath = path.resolve(__dirname, 'client');
 var mainPath = path.resolve(__dirname, clientPath, 'index.js');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const extractCSS = new ExtractTextPlugin('css-bundle.css');
-const extractSCSS = new ExtractTextPlugin('scss-bundle.css');
+const extractCSS = new ExtractTextPlugin('css/cssbundle.css');
+const extractSCSS = new ExtractTextPlugin('css/scssbundle.css');
 
 
 var config = {
@@ -24,13 +25,10 @@ var config = {
       {
         test: /\.js$/,
         use: [{
-          use: 'babel-loader',
-          options: {
-            presets: ['es2015', 'react'],
-          }
+        loader: 'babel-loader',
+        options: { presets: ['es2015'] },
         }],
-        exclude: [/node_modules/, /particles.min.js/, /smooth-scroll.min.js/],
-        include: path.resolve(__dirname, clientPath)
+        exclude: [/node_modules/, /particles.min.js/, /smooth-scroll.min.js/]
       },
       {
         test: /\.scss$/,
@@ -63,7 +61,8 @@ var config = {
   },
   plugins: [
     extractCSS,
-    extractSCSS
+    extractSCSS,
+
   ]
 };
 
