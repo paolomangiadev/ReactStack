@@ -33,7 +33,7 @@ export default function(app) {
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
 
-    app.use('/', express.static(path.join(__dirname, clientPath)));
+    app.use(express.static(path.join(__dirname, clientPath)));
 
     app.get('/*', function (req, res, next) {
       if (req.url === '/api/services') return next();

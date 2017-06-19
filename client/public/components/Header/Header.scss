@@ -1,12 +1,11 @@
 /*=============================================>>>>>
 = HERO =
 ===============================================>>>>>*/
-// $cdn: 'https://dtgngz52ivvgd.cloudfront.net';
-$cdn: $assets;
+
 /* BACKGROUND */
 
 .is-background {
-  background: url('#{$cdn}/bg-netglitch.jpeg') no-repeat;
+  background: url('/bg-netglitch.jpeg') no-repeat;
   background-size: cover;
 }
 .trasparent {

@@ -18,7 +18,8 @@ var config = {
   entry: mainPath,
   output: {
     path: buildPath,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: 'https://s3.eu-central-1.amazonaws.com/',
   },
   module: {
     rules: [
@@ -62,11 +63,11 @@ var config = {
       },
       {
         test: /\.(jpeg|png|gif|svg|jpg)$/i,
-        use: "file-loader?name=src/images/[name].[ext]&publicPath=/&outputPath=/"
+        use: "file-loader?name=src/images/[name].[ext]"
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/i,
-        use: 'file-loader?name=src/fonts/[name].[ext]&publicPath=/&outputPath=/'
+        use: "file-loader?name=src/fonts/[name].[ext]"
       }
     ]
   },
