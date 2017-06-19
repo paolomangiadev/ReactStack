@@ -40,14 +40,9 @@ var config = {
             {
               loader: 'css-loader'
             }, {
-              loader: 'sass-loader',
-              options: {
-                vars: {
-                  assets: '../../src/images',
-                  env: process.env.NODE_ENV,
-                }
-              },
-            }]
+              loader: 'sass-loader'
+            }
+          ]
         })
       },
       {
