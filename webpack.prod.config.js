@@ -10,6 +10,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('css/cssbundle.css');
 const extractSCSS = new ExtractTextPlugin('css/scssbundle.css');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 var config = {
 
@@ -24,14 +26,15 @@ var config = {
   module: {
     rules: [
       {
+        // JS LOADER
         test: /\.js$/,
         use: [{
-        loader: 'babel-loader',
-        options: { presets: ['es2015'] },
+        loader: 'babel-loader'
         }],
         exclude: [/node_modules/, /particles.min.js/, /smooth-scroll.min.js/]
       },
       {
+        // SCSS LOADER
         test: /\.scss$/,
         use: extractSCSS.extract({
           fallback: 'style-loader',
@@ -46,6 +49,7 @@ var config = {
         })
       },
       {
+        // CSS LOADER
         test: /\.css$/,
         use: extractCSS.extract({
           fallback: 'style-loader',
@@ -57,21 +61,35 @@ var config = {
         use: 'exports-loader?this.WOW'
       },
       {
+        // ASSETS LOADER
         test: /\.(jpeg|png|gif|svg|jpg)$/i,
-        use: 'url-loader?name=src/images/[name].[ext]&limit=8192'
+        use: "file-loader?name=src/fonts/[name].[ext]"
       },
       {
+        // FONTS LOADER
         test: /\.(eot|svg|ttf|woff|woff2)$/i,
         use: "file-loader?name=src/fonts/[name].[ext]"
+      },
+      {
+        //JSON LOADER
+        test: /\.json$/,
+        use: 'json-loader'
       }
     ]
+  },
+  resolve: {
+    extensions: [".js", ".json", ".css"]
   },
   plugins: [
     extractCSS,
     extractSCSS,
-    new CopyWebpackPlugin([
-      { from: './client/public/index.html' }
-    ]),
+    new HtmlWebpackPlugin({
+      template: 'client/public/index_prod.html',
+      filename: 'index.html'
+    })
+    // new CopyWebpackPlugin([
+    //   { from: './client/public/index.html' }
+    // ]),
   ]
 };
 

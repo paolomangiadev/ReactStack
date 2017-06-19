@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import particles from '../../external-libraries/particles/particles.min.js';
 import axios from 'axios';
 import bulma from 'bulma/css/bulma.css';
 import css from './Home.css';

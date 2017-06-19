@@ -18,10 +18,6 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _particlesMin = require('../../external-libraries/particles/particles.min.js');
-
-var _particlesMin2 = _interopRequireDefault(_particlesMin);
-
 var _axios = require('axios');
 
 var _axios2 = _interopRequireDefault(_axios);

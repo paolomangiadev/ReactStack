@@ -26,7 +26,7 @@ exports.default = function (app) {
     app.use(_bodyParser2.default.urlencoded({ extended: true }));
     app.use(_bodyParser2.default.json());
 
-    app.use('/', _express2.default.static(_path2.default.join(__dirname, clientPath)));
+    app.use(_express2.default.static(_path2.default.join(__dirname, clientPath)));
 
     app.get('/*', function (req, res, next) {
       if (req.url === '/api/services') return next();else {

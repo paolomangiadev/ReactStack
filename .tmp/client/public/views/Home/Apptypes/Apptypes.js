@@ -44,13 +44,13 @@ var Apptypes = function (_Component) {
 
     _this.state = {
       line1: [{
-        src: "../../../src/images/webapp.png",
+        src: "/src/images/webapp.png",
         title: "Web App",
         description: "Desktop or WebApp",
         link_txt: "Get a Quote",
         href: "dfgdfg"
       }, {
-        src: "../../../src/images/mobileapp.png",
+        src: "/src/images/mobileapp.png",
         title: "Mobile App",
         description: "Smartphone and Tablet app",
         link_txt: "Get a Quote",
@@ -71,7 +71,7 @@ var Apptypes = function (_Component) {
             _react2.default.createElement(
               'div',
               { className: 'wrapper_noLine' },
-              _react2.default.createElement('div', { className: 'single-apptypes', style: { backgroundImage: 'url(' + item.src + ')' } }),
+              _react2.default.createElement('div', { className: 'single-apptypes', style: { background: 'url(' + item.src + ')' } }),
               _react2.default.createElement(
                 'div',
                 { className: 'text-apptypes' },

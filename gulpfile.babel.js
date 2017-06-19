@@ -16,8 +16,8 @@ var execute = child_process.exec;
 
 browserSync.create()
 var plugins = gulpLoadPlugins(); // carica plugin di gulp
-var serverPath = 'server'; // define cartella server
-var clientPath = 'client/public'; // define cartella server
+var serverPath = './server'; // define cartella server
+var clientPath = './client/public'; // define cartella server
 var webpack_config = 'dist/webpack.prod.config.js';
 var webpack_root = 'webpack.prod.config.js';
 
@@ -32,8 +32,9 @@ const paths = {
           `${clientPath}/**/!(*.spec|*.integration).js` // include di tutti gli script client [no integration tests]
         ],
         views: [
-          `${clientPath}/index.html` // include di tutti gli script client [no integration tests]
+          `${clientPath}/**/*.html` // include di tutti gli script client [no integration tests]
         ],
+        configs: [`${clientPath}/**/*.json`],
         assets: [
           `${clientPath}/src/**/*`
         ],
@@ -96,7 +97,12 @@ gulp.task('copy:mainstyle', ['copy:styles'], function() {
         .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
 });
 
-gulp.task('build:client', ['copy:mainstyle'], function() {
+gulp.task('copy:configs', ['copy:mainstyle'], function() {
+    return gulp.src(_.union(paths.client.configs))
+        .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
+});
+
+gulp.task('build:client', ['copy:configs'], function() {
     return gulp.src(_.union(paths.client.views))
         .pipe(gulp.dest(`${paths.dist}/${clientPath}`));
 });
@@ -113,6 +119,7 @@ gulp.task('serve', cb => {
                  'transpile:client',
                  'copy:assets',
                  'copy:styles',
+                 'copy:configs',
                  'copy:mainstyle',
                  'build:client'
                ], // ordine di lancio tasks gulp
@@ -161,8 +168,13 @@ gulp.task('copy:production-mainstyle', ['copy:production-styles'], function() {
         .pipe(gulp.dest(`${paths.prod}/${clientPath}`));
 });
 
+gulp.task('copy:production-configs', ['copy:production-mainstyle'], function() {
+    return gulp.src(_.union(paths.client.configs))
+        .pipe(gulp.dest(`${paths.prod}/${clientPath}`));
+});
+
 //copy views in production folder
-gulp.task('build:production-client', ['copy:production-mainstyle'], function() {
+gulp.task('build:production-client', ['copy:production-configs'], function() {
     return gulp.src(_.union(paths.client.views))
         .pipe(gulp.dest(`${paths.prod}/${clientPath}`));
 });
@@ -183,7 +195,7 @@ gulp.task('build:prod', ['copy:production-webpack'], function (cb) {
 
 //clean the distribution
 gulp.task('clean:public-folder', ['build:prod'], () => {
-    return del([`${paths.prod}/public`], {dot: true})
+    return del([`${paths.prod}/client/public`], {dot: true})
 });
 
 gulp.task('build:production', cb => {
@@ -193,6 +205,7 @@ gulp.task('build:production', cb => {
                  'copy:production-assets',
                  'copy:production-styles',
                  'copy:production-mainstyle',
+                 'copy:production-configs',
                  'build:production-client',
                  'copy:production-webpack',
                  'build:prod',

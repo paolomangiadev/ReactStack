@@ -21,7 +21,7 @@ function registerWOW() {
 
 // REGISTER PARTICLES.js
 function registerParticles () {
-  return particlesJS.load('particles-js', '../external-libraries/particles/particlesjs-config.json',
+  return particlesJS.load('particles-js', 'https://api.myjson.com/bins/1fljk5',
             function() {
             console.log('callback - particles.js config loaded');
          });

@@ -8,6 +8,10 @@ var _animate = require('animate.css/animate.css');
 
 var _animate2 = _interopRequireDefault(_animate);
 
+var _particles = require('particles.js');
+
+var _particles2 = _interopRequireDefault(_particles);
+
 var _wowjs = require('wowjs');
 
 var _wowjs2 = _interopRequireDefault(_wowjs);
@@ -32,7 +36,7 @@ function registerWOW() {
 
 // REGISTER PARTICLES.js
 function registerParticles() {
-  return particlesJS.load('particles-js', '../external-libraries/particles/particlesjs-config.json', function () {
+  return _particles2.default.load('particles-js', 'https://api.myjson.com/bins/1fljk5', function () {
     console.log('callback - particles.js config loaded');
   });
 }

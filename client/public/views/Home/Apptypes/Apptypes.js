@@ -13,14 +13,14 @@ class Apptypes extends Component {
     this.state = {
       line1: [
         {
-          src: "../../../src/images/webapp.png",
+          src: "/src/images/webapp.png",
           title: "Web App",
           description: "Desktop or WebApp",
           link_txt: "Get a Quote",
           href: "dfgdfg"
         },
         {
-          src: "../../../src/images/mobileapp.png",
+          src: "/src/images/mobileapp.png",
           title: "Mobile App",
           description: "Smartphone and Tablet app",
           link_txt: "Get a Quote",
@@ -35,7 +35,7 @@ class Apptypes extends Component {
         return (
           <a className="column anchor-wrap" href={item.href} key={item.title}>
             <div className="wrapper_noLine">
-              <div className="single-apptypes" style={{backgroundImage: `url(${item.src})`}}></div>
+              <div className="single-apptypes" style={{background: `url(${item.src})`}}></div>
               <div className="text-apptypes">
                 <h2 className="title">{item.title}</h2>
                 <p className="description_apptypes">{item.description}</p>
