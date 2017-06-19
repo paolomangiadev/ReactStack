@@ -19,7 +19,7 @@ var config = {
   output: {
     path: buildPath,
     filename: 'bundle.js',
-    publicPath: 'https://s3.eu-central-1.amazonaws.com/',
+    publicPath: 'https://dtgngz52ivvgd.cloudfront.net/',
   },
   module: {
     rules: [
@@ -58,7 +58,7 @@ var config = {
       },
       {
         test: /\.(jpeg|png|gif|svg|jpg)$/i,
-        use: "file-loader?name=src/images/[name].[ext]"
+        use: 'url-loader?name=src/images/[name].[ext]&limit=8192'
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/i,
