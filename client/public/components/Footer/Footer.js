@@ -5,7 +5,7 @@ import ReactHtmlParser from 'react-html-parser';
 import _ from 'lodash';
 
 let socialList;
-const brand = '../../src/images/netglitch.png';
+import brand from '../../src/images/netglitch.png';
 
 class Footer extends Component {
   constructor(props){
@@ -14,18 +14,19 @@ class Footer extends Component {
       socials: [
         {
           href: 'https://www.facebook.com/Netglitch-639632836220315/',
-          src: '../../src/images/facebook.png'
+          src: 'src/images/facebook.png'
         },
         {
           href: 'https://www.instagram.com/netglitch/',
-          src: '../../src/images/instagram.png'
+          src: 'src/images/instagram.png'
         },
         {
-          href: '#second', src: '../../src/images/twitter.png'
+          href: '#second',
+          src: 'src/images/twitter.png'
         },
         {
           href: '#',
-          src: '../../src/images/linkedin.png'
+          src: 'src/dfds/linkedin.png'
         }
       ]
     }
@@ -39,7 +40,7 @@ class Footer extends Component {
       socialList = _.map(this.state.socials, function(item) {
         return (
           <a href={item.href} key={item.src}>
-            <div className="column socials"><img src={item.src}/></div>
+            <div className="column socials"><img src="./netglitch.png"/></div>
           </a>
         );
       });

@@ -26,6 +26,10 @@ var config = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: [ "html-loader?root=src/images/" ]
+      },
+      {
         // JS LOADER
         test: /\.js$/,
         use: [{
@@ -63,7 +67,7 @@ var config = {
       {
         // ASSETS LOADER
         test: /\.(jpeg|png|gif|svg|jpg)$/i,
-        use: "file-loader?name=src/fonts/[name].[ext]"
+        use: "file-loader?name=src/images/[name].[ext]"
       },
       {
         // FONTS LOADER
