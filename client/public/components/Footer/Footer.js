@@ -6,8 +6,12 @@ import _ from 'lodash';
 
 let socialList;
 
+// IMAGES (icons)
 import brand from '../../src/images/netglitch.png';
-import facebook_icon from '../../src/images/facebook.png'
+import facebook_icon from '../../src/images/facebook.png';
+import instagram_icon from '../../src/images/instagram.png';
+import twitter_icon from '../../src/images/twitter.png';
+import linkedin_icon from '../../src/dfds/linkedin.png';
 
 class Footer extends Component {
   constructor(props){
@@ -20,21 +24,18 @@ class Footer extends Component {
         },
         {
           href: 'https://www.instagram.com/netglitch/',
-          src: '../../src/images/instagram.png'
+          src: instagram_icon
         },
         {
           href: '#second',
-          src: '../../src/images/twitter.png'
+          src: twitter_icon
         },
         {
           href: '#',
-          src: '../../src/dfds/linkedin.png'
+          src: linkedin_icon
         }
       ]
     }
-  }
-
-  componentDidMount() {
   }
 
   render(){

@@ -21,7 +21,7 @@ var config = {
   output: {
     path: buildPath,
     filename: 'bundle.js',
-    // publicPath: 'https://dtgngz52ivvgd.cloudfront.net/',
+    publicPath: 'https://dtgngz52ivvgd.cloudfront.net/',
   },
   module: {
     rules: [

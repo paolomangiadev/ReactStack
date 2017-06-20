@@ -1,4 +1,3 @@
-// import './public-path';
 import './public-path';
 import React from 'react';
 import { render } from 'react-dom';
