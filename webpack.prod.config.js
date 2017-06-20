@@ -21,19 +21,19 @@ var config = {
   output: {
     path: buildPath,
     filename: 'bundle.js',
-    publicPath: 'https://dtgngz52ivvgd.cloudfront.net/',
+    // publicPath: 'https://dtgngz52ivvgd.cloudfront.net/',
   },
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        use: [ "html-loader?root=src/images/" ]
-      },
+      // {
+      //   test: /\.html$/,
+      //   use: [ "html-loader?root=src/images/" ]
+      // },
       {
         // JS LOADER
         test: /\.js$/,
         use: [{
-        loader: 'babel-loader'
+          loader: 'babel-loader'
         }],
         exclude: [/node_modules/, /particles.min.js/, /smooth-scroll.min.js/]
       },
