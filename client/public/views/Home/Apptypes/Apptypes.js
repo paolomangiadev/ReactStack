@@ -5,8 +5,8 @@ import _ from 'lodash';
 let apptypesList1;
 let apptypesList2;
 
-import webappIMG from "../../../src/images/webapp.png";
-import mobileappIMG from "../../../src/images/mobileapp.png";
+import webappIMG from "../../../src/images/webapp.jpeg";
+import mobileappIMG from "../../../src/images/mobileapp.jpeg";
 
 class Apptypes extends Component {
   componentDidMount() {

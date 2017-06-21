@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import css from './Masonry.css';
 import _ from 'lodash';
 
-import webdesignIMG from "../../../src/images/item-1.png";
-import graphicdesignIMG from "../../../src/images/item-2.png";
-import TeamMembersIMG from "../../../src/images/item-3.png";
-import TechnologiesIMG from "../../../src/images/item-4.png";
-import socialIMG from "../../../src/images/item-5.png";
+import webdesignIMG from "../../../src/images/item-1.jpeg";
+import graphicdesignIMG from "../../../src/images/item-2.jpeg";
+import TeamMembersIMG from "../../../src/images/item-3.jpeg";
+import TechnologiesIMG from "../../../src/images/item-4.jpeg";
+import socialIMG from "../../../src/images/item-5.jpeg";
 
 let masonryList1;
 let masonryList2;
