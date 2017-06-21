@@ -11,7 +11,6 @@ import browserSync from 'browser-sync';
 import gutil from 'gulp-util';
 import webpack from 'webpack-stream';
 import child_process from 'child_process';
-import clean from 'gulp-clean';
 var execute = child_process.exec;
 // import webpackconfig from './webpack.config.js';
 
@@ -67,8 +66,7 @@ let transpileClient = lazypipe()
 
 
 gulp.task('clean:dist', () => {
-    return gulp.src(`${paths.dist}`, {read: false})
-		.pipe(clean());
+    return del([`${paths.dist}`], {dot: true})
 });
 
 gulp.task('transpile:server', ['clean:dist'], () => {
@@ -134,8 +132,7 @@ gulp.task('serve', cb => {
 
 //clean the distribution
 gulp.task('clean:production-dist', () => {
-  return gulp.src(`${paths.dist}`, {read: false})
-  .pipe(clean());
+    return del([`${paths.prod}`], {dot: true})
 });
 
 //transpile the production server
@@ -198,8 +195,7 @@ gulp.task('build:prod', ['copy:production-webpack'], function (cb) {
 
 //clean the distribution
 gulp.task('clean:public-folder', ['build:prod'], () => {
-    return gulp.src(`${paths.dist}/client/public`, {read: false})
-    .pipe(clean());
+    return del([`${paths.prod}/client/public`], {dot: true})
 });
 
 gulp.task('build:production', cb => {
