@@ -5,6 +5,9 @@ import _ from 'lodash';
 let apptypesList1;
 let apptypesList2;
 
+import webappIMG from "../../../src/images/webapp.png";
+import mobileappIMG from "../../../src/images/mobileapp.png";
+
 class Apptypes extends Component {
   componentDidMount() {
   }
@@ -13,14 +16,14 @@ class Apptypes extends Component {
     this.state = {
       line1: [
         {
-          src: "/src/images/webapp.png",
+          src: webappIMG,
           title: "Web App",
           description: "Desktop or WebApp",
           link_txt: "Get a Quote",
           href: "dfgdfg"
         },
         {
-          src: "/src/images/mobileapp.png",
+          src: mobileappIMG,
           title: "Mobile App",
           description: "Smartphone and Tablet app",
           link_txt: "Get a Quote",

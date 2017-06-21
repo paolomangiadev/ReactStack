@@ -6,8 +6,8 @@ import _ from 'lodash';
 import classNames from 'classnames';
 import { HashLink as Link } from 'react-router-hash-link';
 
-const brand = '../../../src/images/netglitch.png';
-const line = '../../../src/images/line.png';
+import brand from '../../src/images/netglitch.png';
+import line from '../../src/images/line.png';
 
 let socialList;
 let html = document.getElementsByTagName( 'html' )[0];

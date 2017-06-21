@@ -4,6 +4,8 @@ import ReactHtmlParser from 'react-html-parser';
 import smoothScroll from '../../external-libraries/smoothscroll/smooth-scroll.min.js';
 import classNames from 'classnames';
 
+import back2Top_icon from "../../src/images/arrowup.png";
+
 let html = document.getElementsByTagName( 'html' )[0];
 
 class Back2Top extends Component {
@@ -47,7 +49,7 @@ class Back2Top extends Component {
     return (
       <div>
         <a onClick={this.scrolltoTop} className={classNames('toTopAnchor', {back2Top: this.state.back2Top})}>
-          <img src="../src/images/arrowup.png" />
+          <img src={back2Top_icon} />
         </a>
       </div>
     );

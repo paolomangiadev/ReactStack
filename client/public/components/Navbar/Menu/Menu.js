@@ -4,6 +4,12 @@ import classNames from 'classnames';
 // import { Link } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 
+// IMAGES (icons)
+import facebook_icon from '../../../src/images/facebook.png';
+import instagram_icon from '../../../src/images/instagram.png';
+import twitter_icon from '../../../src/images/twitter.png';
+import linkedin_icon from '../../../src/images/linkedin.png';
+
 
 let socialList;
 class Menu extends Component {
@@ -13,19 +19,19 @@ class Menu extends Component {
       socials: [
         {
           href: 'https://www.facebook.com/Netglitch-639632836220315/',
-          src: '../../../src/images/facebook.png'
+          src: facebook_icon
         },
         {
           href: 'https://www.instagram.com/netglitch/',
-          src: '../../../src/images/instagram.png'
+          src: instagram_icon
         },
         {
           href: '#second',
-          src: '../../../src/images/twitter.png'
+          src: twitter_icon
         },
         {
           href: '#',
-          src: '../../../src/images/linkedin.png'
+          src: linkedin_icon
         }
       ]
     }

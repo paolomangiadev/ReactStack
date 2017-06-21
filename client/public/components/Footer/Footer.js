@@ -11,7 +11,7 @@ import brand from '../../src/images/netglitch.png';
 import facebook_icon from '../../src/images/facebook.png';
 import instagram_icon from '../../src/images/instagram.png';
 import twitter_icon from '../../src/images/twitter.png';
-import linkedin_icon from '../../src/dfds/linkedin.png';
+import linkedin_icon from '../../src/images/linkedin.png';
 
 class Footer extends Component {
   constructor(props){
