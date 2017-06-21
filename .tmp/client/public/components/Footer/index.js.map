@@ -1,1 +1,0 @@
-{"version":3,"sources":["components/Footer/index.js"],"names":[],"mappings":";;;;;;AAAA","file":"index.js","sourcesContent":["import Footer from './Footer';\nexport default Footer;\n"]}

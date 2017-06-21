@@ -1,1 +1,0 @@
-{"version":3,"sources":["views/Home/Quotes/index.js"],"names":[],"mappings":";;;;;;AAAA","file":"index.js","sourcesContent":["import Quotes from './Quotes';\r\nexport default Quotes;\r\n"]}
