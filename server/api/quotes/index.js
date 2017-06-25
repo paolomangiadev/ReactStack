@@ -15,9 +15,9 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage });
 var fs = require('fs');
-// router.get('/', controller.index);
 // router.get('/:id', controller.show);
-router.post('/', upload.any(), controller.create);
+router.get('/', controller.index);  //FRASI
+router.post('/', upload.any(), controller.create); //PREVENTIVI
 // router.put('/:id', controller.update);
 // router.patch('/:id', controller.update);
 // router.delete('/:id', controller.destroy);

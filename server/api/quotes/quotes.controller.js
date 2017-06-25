@@ -7,6 +7,7 @@ import Promise from 'bluebird';
 import * as templateService from './templateLoader';
 import _ from 'lodash';
 import path from 'path';
+import https from 'https';
 
 // DEFINE THE TRANSPORTER
 let transporter = nodemailer.createTransport({
@@ -23,6 +24,17 @@ let transporter = nodemailer.createTransport({
 
 // Gets a list items
 export function index(req, res) {
+
+  https.get('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&callback=' + new Date().getTime(), (response) => {
+
+    response.on('data', (d) => {
+      res.send(200, d);
+    });
+
+    }).on('error', (e) => {
+      console.error(e);
+
+  });
 
 }
 // Gets a sing item from DB

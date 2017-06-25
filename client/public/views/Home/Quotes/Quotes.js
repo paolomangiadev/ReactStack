@@ -39,7 +39,7 @@ class Quotes extends Component {
 
   poll () {
     var self = this;
-    axios.get('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&callback=' + new Date().getTime())
+    axios.get('/api/quotes')
     .then((response) => {
       var data = response.data[0];
       data.content = this.decodeEntities(response.data[0].content);
@@ -48,7 +48,6 @@ class Quotes extends Component {
         this.setState({quote: data});
       }
       else {
-        console.log('too long');
         this.poll();
       }
     })
