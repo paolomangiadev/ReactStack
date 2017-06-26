@@ -7,7 +7,7 @@ class Aboutus extends Component {
   }
   render(){
     return (
-    <div id="second" className="is-fullwidth">
+    <div id="aboutus" className="is-fullwidth">
       <section className="hero is-fullheight aboutUs">
         <div className="hero-body">
           <div className="container">

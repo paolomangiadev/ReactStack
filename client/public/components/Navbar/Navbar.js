@@ -40,6 +40,9 @@ class Navbar extends Component {
   }
 
   goBack (){
+    if (this.state.menuOpen === true) {
+      this.toggleMenu();
+    }
     history.goBack();
   }
 

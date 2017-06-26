@@ -72,6 +72,7 @@ class Services extends Component {
 
   componentDidMount() {
     //init of Plugins
+    window.scrollTo(0, 0);
     Utils.registerPlugins();
     that = this;
     Dropzone.autoDiscover = false;

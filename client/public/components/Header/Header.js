@@ -26,7 +26,7 @@ class Header extends Component {
           src: '../../../src/images/instagram.png'
         },
         {
-          href: '#second', src: '../../../src/images/twitter.png'
+          href: '#', src: '../../../src/images/twitter.png'
         },
         {
           href: '#',
@@ -61,7 +61,7 @@ class Header extends Component {
     }
 
     return (
-    <div id="first" className={classNames('is-fullwidth', 'is-background', {menuopen: this.state.menuopen})}>
+    <div id="header" className={classNames('is-fullwidth', 'is-background', {menuopen: this.state.menuopen})}>
       <section className="hero trasparent is-medium is-fullheight Home" id="particles-js">
         {/* HERO */}
         <div className="hero-body">
@@ -82,13 +82,13 @@ class Header extends Component {
             <div className="subtitle">
               <div data-wow-duration="0.7s" className="wow fadeInUp get-quote">
                 <div className="get-quote_wrapper left_wrapper">
-                  <a className="item item_left">Services</a>
+                  <a href="#services" className="item item_left">Services</a>
                   <div className="item item_line item_line_left"></div>
                   <Link to="/get-a-quote" className="item button is-danger is-inverted is-outlined">
                     Get a Quote
                   </Link>
                   <div className="item item_line item_line_right"></div>
-                  <a className="item item_right">Jobs</a>
+                  <a href="#contacts" className="item item_right">Contacts</a>
                 </div>
               </div>
             </div>

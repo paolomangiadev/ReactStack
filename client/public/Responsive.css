@@ -161,11 +161,15 @@
   .social_wrapper .column {
     padding-left: 0;
   }
-  .third_col-footer .button_footer {
+  #footer_button {
     float: left;
   }
   .hero.is-medium.footer .hero-body {
     padding-bottom: 6rem;
+  }
+  .GetAQuoteHeading .hero-body {
+    padding-bottom: 6rem;
+    padding-top: 7rem;
   }
 }
 @media screen and (max-width: 750px) {
@@ -278,7 +282,7 @@
     margin: 0 20px 0 20px;
   }
   .get-quote a.item {
-    min-width: 60px;
+    min-width: 40px;
   }
   #fourth .quotes h1 {
     font-size: 2.5em;
@@ -301,6 +305,9 @@
   }
   .column.socials {
     width: 20% !important;
+  }
+  .hero.is-medium.is-primary.GetAQuoteHeading .title {
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 320px) {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import css from './Apptypes.css';
 import _ from 'lodash';
+import { HashLink as Link } from 'react-router-hash-link';
 
 let apptypesList1;
 let apptypesList2;
@@ -20,14 +21,14 @@ class Apptypes extends Component {
           title: "Web App",
           description: "Desktop or WebApp",
           link_txt: "Get a Quote",
-          href: "dfgdfg"
+          href: "/get-a-quote"
         },
         {
           src: mobileappIMG,
           title: "Mobile App",
           description: "Smartphone and Tablet app",
           link_txt: "Get a Quote",
-          href: "sfgdsg"
+          href: "/get-a-quote"
         }
       ]
     }
@@ -36,7 +37,7 @@ class Apptypes extends Component {
     if (this.state.line1) {
       apptypesList1 = _.map(this.state.line1, function(item) {
         return (
-          <a className="column anchor-wrap" href={item.href} key={item.title}>
+          <Link className="column anchor-wrap" to={item.href} key={item.title}>
             <div className="wrapper_noLine">
               <div className="single-apptypes" style={{background: `url(${item.src})`}}></div>
               <div className="text-apptypes">
@@ -47,13 +48,13 @@ class Apptypes extends Component {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
         );
       });
     }
 
     return (
-      <div id="sixth" className="is-fullwidth is-background">
+      <div id="apptypes" className="is-fullwidth is-background">
         <section className="hero is-fullheight Apptypes">
           <div data-wow-duration="1.5s" className="wow fadeIn columns is-gapless">
             {apptypesList1}

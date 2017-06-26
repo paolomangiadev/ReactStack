@@ -12,7 +12,7 @@ import history from './history';
 
 // ALL ROUTES
 import Home from './views/Home'; //home page
-import Services from './views/Services'; //webdesign page
+// import Services from './views/Services'; //webdesign page
 import GetAQuote from './views/GetAQuote'; // get-a-quote page
 
 let html = document.getElementsByTagName( 'html' )[0];
@@ -22,9 +22,6 @@ class Layout extends Component {
     this.state = {
       menuopen: false
     }
-  }
-
-  componentDidMount() {
   }
 
   onUpdate(menuState) {
@@ -47,7 +44,7 @@ class Layout extends Component {
             <div className="black-bg"></div>
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route path="/services/:service" component={Services}/>
+              {/* <Route path="/services/:service" component={Services}/> */}
               <Route path="/get-a-quote" component={GetAQuote}/>
             </Switch>
             <Back2Top />

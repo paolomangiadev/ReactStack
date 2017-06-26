@@ -26,7 +26,7 @@ class Menu extends Component {
           src: instagram_icon
         },
         {
-          href: '#second',
+          href: '#',
           src: twitter_icon
         },
         {
@@ -68,23 +68,23 @@ class Menu extends Component {
             <div className="has-text-right">
               <ul className="menu-list">
                 <li>
-                  <Link className="blue" to="/#second" onClick={this.toggleMenu.bind(this)}>
+                  <Link className="blue" to="/#aboutus" onClick={this.toggleMenu.bind(this)}>
                     What we do
                   </Link>
                 </li>
                 <li>
-                  <Link className="blue" to="/#third" onClick={this.toggleMenu.bind(this)}>
+                  <Link className="blue" to="/#services" onClick={this.toggleMenu.bind(this)}>
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link className="blue" to="/#sixth" onClick={this.toggleMenu.bind(this)}>
+                  <Link className="blue" to="/#apptypes" onClick={this.toggleMenu.bind(this)}>
                     Hire Us
                   </Link>
                 </li>
                 <li>
-                  <Link className="blue" to="#seventh" onClick={this.toggleMenu.bind(this)}>
-                    Contact US
+                  <Link className="blue" to="#contacts" onClick={this.toggleMenu.bind(this)}>
+                    Contact Us
                   </Link>
                 </li>
               </ul>

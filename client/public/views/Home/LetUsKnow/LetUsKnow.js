@@ -20,7 +20,7 @@ class Quotes extends Component {
 
   render(){
     return (
-      <div id="fifth" className="is-fullwidth is-letusknow">
+      <div id="letusknow" className="is-fullwidth is-letusknow">
         <section className="hero is-medium has-text-centered">
           <div className="hero-body">
             <div className="container">

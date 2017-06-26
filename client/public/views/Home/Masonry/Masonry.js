@@ -99,7 +99,7 @@ class Masonry extends Component {
 
 
     return (
-      <div id="third" className="is-fullwidth is-background">
+      <div id="services" className="is-fullwidth is-background">
         <section className="hero is-fullheight Masonry">
           <div data-wow-duration="1.5s" className="wow fadeIn columns is-gapless">
             {masonryList1}

@@ -3,6 +3,7 @@ import css from './Footer.css';
 import axios from 'axios';
 import ReactHtmlParser from 'react-html-parser';
 import _ from 'lodash';
+import { HashLink as Link } from 'react-router-hash-link';
 
 let socialList;
 
@@ -50,7 +51,7 @@ class Footer extends Component {
     }
 
     return (
-      <div id="seventh" className="is-fullwidth is-footer">
+      <div id="contacts" className="is-fullwidth is-footer">
         <section className="hero is-medium footer">
           <div className="hero-body">
             <div className="container">
@@ -117,9 +118,9 @@ class Footer extends Component {
                 <div className="column third_col-footer">
                   <h2 className="title">Hire Us</h2>
                   <div className="title_divider"></div>
-                  <div className="item button is-danger is-inverted is-outlined button_footer">
+                  <Link id="footer_button" to="/get-a-quote" className="item button is-danger is-inverted is-outlined button_footer">
                     Get a Quote
-                  </div>
+                  </Link>
                 </div>
 
               </div>

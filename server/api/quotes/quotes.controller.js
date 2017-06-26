@@ -28,7 +28,7 @@ export function index(req, res) {
   https.get('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&callback=' + new Date().getTime(), (response) => {
 
     response.on('data', (d) => {
-      res.send(200, d);
+      res.status(200).send(d);
     });
 
     }).on('error', (e) => {
@@ -80,8 +80,8 @@ export function create(req, res) {
   templateService.loadTemplates(context, 'followup').then((res) => {
     // //send a followup mail to the user to know that everything went good
     return transporter.sendMail({ // setup email data with unicode symbols
-        from: context.name + ' < ' + context.mail + ' >', // sender address
-        to: 'paolo.mangia.dev@gmail.com', // list of receivers
+        from: 'NetGlitch.com' + ' < ' + 'netglitch.dev@gmail.com' + ' >', // sender address
+        to: context.mail, // list of receivers
         subject: res.subject, // Subject line
         text: res.text, // plain text body
         html: res.html, // html body
