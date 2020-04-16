@@ -3,72 +3,62 @@ import css from './Quotes.css';
 import axios from 'axios';
 import ReactHtmlParser from 'react-html-parser';
 import _ from 'lodash';
+import { timer } from 'rxjs';
 
 let quote = {};
 let isMounted = false;
 
 class Quotes extends Component {
-  constructor(props){
+  timer = null;
+  constructor(props) {
     super(props);
     this.state = {
-      quote: quote
+      quote: quote,
     }
   }
 
-  startPolling () {
-    var self = this;
-    this.timestart = setTimeout(function() {
-      console.log('isMounted: ' + isMounted);
-      if (!isMounted) { return; } // abandon
-      self.poll(); // do it once and then start it up ...
-      self._timer = setInterval(self.poll.bind(self), 13000);
-    }, 10);
-  }
-
-  decodeEntities(str) {
-  // this prevents any overhead from creating the object each time
-    var element = document.createElement('div');
-    if(str && typeof str === 'string') {
+  decodeEntities (str) {
+    // this prevents any overhead from creating the object each time
+    const element = document.createElement('div');
+    if (str && typeof str === 'string') {
       // strip script/html tags
       element.innerHTML = str;
       str = element.textContent;
       element.textContent = '';
+      return str;
+    } else {
+      console.log('yo not a string')
     }
-    return str;
   }
 
-  poll () {
-    var self = this;
-    axios.get('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&callback=' + new Date().getTime())
-    .then((response) => {
-      var data = response.data[0];
-      data.content = this.decodeEntities(response.data[0].content);
-      data.title = this.decodeEntities(response.data[0].title);
-      if (data.content.length < 200) {
-        this.setState({quote: data});
-      }
-      else {
-        this.poll();
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
+  getQuote () {
+    axios.get('https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand&callback=' + new Date().getTime())
+      .then((response) => {
+        const data = {
+          content: this.decodeEntities(response.data[0].content.rendered || response.data[0].content),
+          title: this.decodeEntities(response.data[0].title.rendered || response.data[0].title)
+        };
+        if (data.content.length < 200) {
+          this.setState({ quote: data });
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  componentDidMount () {
+    isMounted = timer(0, 5000).subscribe(() => {
+      this.getQuote()
     });
   }
-
-  componentDidMount() {
-    this.startPolling();
-    isMounted = true;
-  }
-  componentWillUnmount(){
-    isMounted = false;
-    clearInterval(this._timer)
-    this._timer = false;
+  componentWillUnmount () {
+    isMounted.unsubscribe();
   }
 
-  render(){
+  render () {
     return (
-      <div id="fourth" className="is-fullwidth is-quotes" onClick={this.poll.bind(this)}>
+      <div id="fourth" className="is-fullwidth is-quotes" onClick={this.getQuote.bind(this)}>
         <section className="hero is-fullheight quotes">
           <div className="hero-body">
             <div data-wow-duration="0.7s" className="wow fadeIn container has-text-centered">
@@ -77,7 +67,7 @@ class Quotes extends Component {
               </h1>
               <div className="quotes_container">
                 <div className="quote_text">
-                  <p>{ ReactHtmlParser(this.state.quote.content) } </p>
+                  <p>{ReactHtmlParser(this.state.quote.content)} </p>
                 </div>
                 <span className="quote_author">
                   - {this.state.quote.title} -
