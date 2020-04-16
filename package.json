@@ -1,9 +1,11 @@
 {
-  "name": "Reactstack",
+  "name": "reactstack",
   "version": "1.0.0",
   "description": "A lightweight React fullstack kit",
   "main": "server/server.js",
   "scripts": {
+    "start": "node server/server.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,6 +23,7 @@
     "bulma": "^0.4.0",
     "classnames": "^2.2.5",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^7.0.2",
     "css-loader": "^0.27.3",
     "del": "^2.2.2",
     "email-templates": "^2.6.0",
